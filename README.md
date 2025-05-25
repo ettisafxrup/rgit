@@ -40,6 +40,7 @@ rgit push
 ```
 
 - pull <br>
+
   It automatically checks for initialization and pulls the repository to the local work setup - likely a ready-to-work command.
 
 ```bash
@@ -47,6 +48,7 @@ rgit pull
 ```
 
 - rename <br>
+
   Changing a branch's name is way more easy with rgit. If I want to change a branch name from "test" to "dev, all I need to do is.
 
 ```bash
@@ -57,6 +59,7 @@ rgit rename test:dev
 ```
 
 - ignore <br>
+
   create an .gitignore file by using rgit, more easily and way more fast.
 
 ```bash
@@ -76,13 +79,19 @@ It will give you all the list it can perform in the terminal.
 
 - If Windows Prompt having issues while running it, Use Git Bash on Windows for best compatibility.
 
+###
+
 # License
 
 MIT License. See <a href="">LICENSE</a> file for details.
 
+###
+
 # Contributing
 
 <b>rgit</b> is an open sourced toolkit. Feel free to contribute, open issues or submit pull requests!
+
+###
 
 # Author
 
