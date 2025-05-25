@@ -1,0 +1,9 @@
+#!/bin/bash
+BOLD=$'\e[1m'
+RED=$'\e[31m'
+GREEN=$'\e[32m'
+BLUE=$'\e[34m'
+SKY_BLUE=$'\033[38;5;117m'
+YELLOW=$'\e[33m'
+SILVER=$'\033[2m'
+NC=$'\e[0m'
