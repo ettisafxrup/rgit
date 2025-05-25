@@ -15,7 +15,7 @@
 
 ## Installation
 
-Download the installer from <a href="web.com" target="_blank">here</a> and install.
+Download the installer from <a href="https://github.com/ettisafxrup/rgit/blob/main/installer/rgit.exe" download>here</a> and install.
 <br>
 That's it, you're just ready to go! Enjoy <b>rgit</b> commands directly in your terminal!
 
