@@ -40,15 +40,12 @@ push() {
         # Pull remote changes with rebase to avoid conflicts
         git pull --rebase "$REMOTE_NAME" "$CURRENT_BRANCH"
 
-        # Check if multiple branches exist
-        branches=($(git branch --format="%(refname:short)"))
-        branch_count=${#branches[@]}
+        # Check if multiple branches exists
 
         if [ "$branch_count" -gt 1 ]; then
             echo "${INFO} Multiple branches found:"
             git branch
-            read -rp "${BOLD}Write your branch:"
-            CURRENT_BRANCH="$branch"
+            read -rp "${BOLD}Write your branch:" CURRENT_BRANCH
             echo "${TICK}"
 
         fi
