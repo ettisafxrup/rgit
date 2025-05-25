@@ -31,21 +31,22 @@ rgit help
 
 ## Commands
 
-- push
+- push <br>
+
   It automatically checks for initialization, initializes if it's not, creates branches and commits and directly pushes to the repository in just a single prompt!
 
 ```bash
 rgit push
 ```
 
-- pull
+- pull <br>
   It automatically checks for initialization and pulls the repository to the local work setup - likely a ready-to-work command.
 
 ```bash
 rgit pull
 ```
 
-- rename
+- rename <br>
   Changing a branch's name is way more easy with rgit. If I want to change a branch name from "test" to "dev, all I need to do is.
 
 ```bash
@@ -53,6 +54,16 @@ rgit pull
 # as an example:
 
 rgit rename test:dev
+```
+
+- ignore <br>
+  create an .gitignore file by using rgit, more easily and way more fast.
+
+```bash
+
+rgit ignore
+
+# It'll be asking file names, add one by one manually and hit enter when you're done.
 ```
 
 It will give you all the list it can perform in the terminal.
