@@ -82,9 +82,7 @@ push() {
             git commit -m "$COMMIT_MSG"
         fi
 
-        git branch -M main
         git push -u "$REMOTE_NAME" main
-
         echo -e "$SUCCESS"
     fi
 }
