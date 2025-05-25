@@ -2,7 +2,6 @@
 # ==== Terminal Message Templates ====
 source "$RCOMMANDS_ROOT/configs/msg.sh"
 
-
 pull(){
 
 echo -e "${INFO} Checking if this is a Git repository..."

@@ -16,7 +16,6 @@ PROMPT_REMOTE_NAME="${BLUE}${BOLD}*${NC} Enter Remote name (e.g., origin):"
 PROMPT_REPO_URL="${BLUE}${BOLD}*${NC} Enter Repository URL:"
 # GIT Messages
 
-GIT_INIT_FOUND="${BLUE}${BOLD}[rgit]: directory found initalized!${NC}"
 NO_GIT_REMOTE_FOUND="${BOLD}No git remotes found. Kindly add one__ ${NC}"
 
 # GIT Commit
