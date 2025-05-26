@@ -9,6 +9,7 @@ source "$RCOMMANDS_ROOT/prompts/pull.sh" # as pull
 source "$RCOMMANDS_ROOT/prompts/rename.sh" # as rename
 source "$RCOMMANDS_ROOT/prompts/create/ignore.sh" # as gitignore
 # Importing Help Command
+source "$RCOMMANDS_ROOT/configs/msg.sh" # as help
 source "$RCOMMANDS_ROOT/prompts/help.sh" # as help
 
 COMMAND="$1"
@@ -16,25 +17,22 @@ COMMAND="$1"
 
 case "$COMMAND" in
   push)
-    push "$2" "$3" "$4" 
+    push "${2:-}" "${3:-}" "${4:-}"
     ;;
   pull)
-    pull "$2" "$3" "$4"
+    pull "${2:-}" "${3:-}" "${4:-}"
     ;;
   rename)
-    rename "$2" "$3" "$4"
+    rename "${2:-}" "${3:-}" "${4:-}"
     ;;
   ignore)
-    ignore "$2" "$3" "$4"
+    ignore "${2:-}" "${3:-}" "${4:-}"
     ;;
-    #
-    # Help Generator
-    #
   help)
     help
     ;;
   *)
-    echo "Unknown command: $COMMAND"
-    echo "Available commands: init, status, push"
+    echo "$NO_COMMAND_FOUND : rgit $COMMAND"
+    echo "$HELP_COMMAND"
     ;;
 esac

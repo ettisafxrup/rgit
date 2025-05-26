@@ -24,3 +24,7 @@ COMMIT_EMPTY="${YELLOW}[rgit]: Commit message is empty, Adding default commit...
 # SUCCESS/ERROR MESSAGES
 SUCCESS="${GREEN}${BOLD}[rgit]: rgit executed successfully ${NC}"
 FAIL="${GREEN}${BOLD}[rgit]: rgit executed with error, please check the faults. ${NC}"
+
+# NO COMMAND FOUND
+NO_COMMAND_FOUND="${CROSS} ${RED}${BOLD} No Command Found! ${NC}"
+HELP_COMMAND="${INFO} ${BOLD} > Use 'rgit help' for details. ${NC}"

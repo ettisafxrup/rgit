@@ -35,7 +35,7 @@ Source: "D:\Codes\terminal\rgit\*"; DestDir: "{app}"; Flags: ignoreversion recur
 // Add {app} folder to system PATH if not already present
 Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"; \
     ValueType: expandsz; ValueName: "Path"; \
-    ValueData: "{code:GetNewPath|{olddata}}"; Flags: preservestringtype uninsdeletevalue
+    ValueData: "{code:GetNewPath|{olddata}}"; Flags: preservestringtype
 
 [Code]
 
@@ -79,3 +79,35 @@ begin
   if CurStep = ssPostInstall then
     NotifyEnvironmentChange;
 end;
+
+procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
+var
+  Path, AppPath, NewPath: string;
+  RegPath: string;
+  PosStart: Integer;
+begin
+  if CurUninstallStep = usUninstall then
+  begin
+    RegPath := 'SYSTEM\CurrentControlSet\Control\Session Manager\Environment';
+    AppPath := ExpandConstant('{app}');
+    if RegQueryStringValue(HKEY_LOCAL_MACHINE, RegPath, 'Path', Path) then
+    begin
+      Path := ';' + Path + ';';
+      AppPath := ';' + LowerCase(AppPath) + ';';
+      PosStart := Pos(AppPath, LowerCase(Path));
+      if PosStart > 0 then
+      begin
+        Delete(Path, PosStart, Length(AppPath));
+      end;
+      // Remove leading and trailing ';'
+      if (Length(Path) > 0) and (Path[1] = ';') then
+        Delete(Path, 1, 1);
+      if (Length(Path) > 0) and (Path[Length(Path)] = ';') then
+        Delete(Path, Length(Path), 1);
+      
+      RegWriteStringValue(HKEY_LOCAL_MACHINE, RegPath, 'Path', Path);
+      NotifyEnvironmentChange;
+    end;
+  end;
+end;
+
