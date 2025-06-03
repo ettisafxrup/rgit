@@ -4,6 +4,14 @@
 
 ---
 
+**Current Version: v1.1.0**
+
+- Bug fixes
+- New Feature: rgit readme
+- Updated generating gitignore file, rgit ignore.
+
+---
+
 ## Features
 
 - Simplified Git command aliases
@@ -66,7 +74,18 @@ rgit rename test:dev
 
 rgit ignore
 
-# It'll be asking file names, add one by one manually and hit enter when you're done.
+# Choose only the file names by 1,2,3... do 0 (zero) when you're done.
+```
+
+- readme <br>
+
+  create an README.md file by using rgit with a ready-to-go template.
+
+```bash
+
+rgit readme
+
+# It'll be asking for prompts, add one by one manually and hit enter when you're done.
 ```
 
 It will give you all the list it can perform in the terminal.
