@@ -7,12 +7,19 @@ export RCOMMANDS_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$RCOMMANDS_ROOT/prompts/push.sh" # as push
 source "$RCOMMANDS_ROOT/prompts/pull.sh" # as pull
 source "$RCOMMANDS_ROOT/prompts/rename.sh" # as rename
+source "$RCOMMANDS_ROOT/prompts/create/readme.sh" # as readme
 source "$RCOMMANDS_ROOT/prompts/create/ignore.sh" # as gitignore
 # Importing Help Command
-source "$RCOMMANDS_ROOT/configs/msg.sh" # as help
+source "$RCOMMANDS_ROOT/configs/msg.sh" # as msg
 source "$RCOMMANDS_ROOT/prompts/help.sh" # as help
 
 COMMAND="$1"
+
+if [[ -z "$COMMAND" ]]; then
+    echo "$NO_COMMAND_FOUND : rgit $COMMAND"
+    echo "$HELP_COMMAND"
+    exit 1
+fi
 
 
 case "$COMMAND" in
@@ -25,8 +32,11 @@ case "$COMMAND" in
   rename)
     rename "${2:-}" "${3:-}" "${4:-}"
     ;;
+  readme)
+    readme "${2:-}" "${3:-}" "${4:-}"
+    ;;
   ignore)
-    ignore "${2:-}" "${3:-}" "${4:-}"
+    ignore "${2:-}"
     ;;
   help)
     help

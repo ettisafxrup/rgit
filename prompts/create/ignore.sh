@@ -1,27 +1,53 @@
 #!/bin/bash
-
 # IMPORTS:
-# Terminal Beauty
-source "$RCOMMANDS_ROOT/configs/color.sh"
-source "$RCOMMANDS_ROOT/configs/msg.sh"
+# Importing Help Command
+source "$RCOMMANDS_ROOT/configs/msg.sh" # as msg
+source "$RCOMMANDS_ROOT/prompts/help.sh" # as help
 
 ignore() {
     GITIGNORE_FILE=".gitignore"
     FILE_COUNT=0
+    DIR_COUNT=0
 
-    echo "${BLUE}${BOLD}[help]:${NC} no different of adding filenames in git (eg. file.txt, *.exe) ${NC}"
-    echo -e "Enter ${BOLD}${BLUE}FILENAMES${NC} to ${BOLD}${RED}IGNORE${NC}.\nPress blank ${BOLD}${RED}ENTER${NC} to finish:${NC}"
+    if [ ! -f ".gitignore" ]; then
+        echo ".gitignore" >> "$GITIGNORE_FILE"
+    fi
 
-    while true; do
-        read -rp "${BOLD}${GREEN}  > ${NC}" filename
-        if [ -z "$filename" ]; then
+    echo -e "${BLUE}${BOLD}[help]:${NC} no different of adding filenames in git (eg. file.txt, *.exe) ${NC}"
+    echo -e "${YELLOW}${BOLD}[HIGHLIGHT]:${NC} To Ignore a Directory, Add \"/\" before Folder Name. (eg. /assets, /env ${NC}"
+
+    # OLD CODE: Manually Adding Files
+    # while true; do
+        
+    #     read -rp "${BOLD}${GREEN}  > ${NC}" filename
+    #     if [ -z "$filename" ]; then
+    #         break
+    #     fi
+    #     echo "$filename" >> "$GITIGNORE_FILE"
+    #     ((FILE_COUNT=FILE_COUNT+1))
+    # done
+
+    echo -e "\n Select ${BOLD}${BLUE}FILENAMES${NC} to ${BOLD}${RED}IGNORE${NC}.\n\n${BOLD}${RED}0) EXIT${NC}${NC}"
+    select filename in *; do
+        while true; do
+            if [ -z "$filename" ]; then
+                break 2  # Exit both select and while
+            fi
+        # Check if it's a directory
+            if [ -d "$filename" ]; then
+                echo "/$filename" >> "$GITIGNORE_FILE"
+                ((DIR_COUNT=DIR_COUNT+1))
+
+            else
+                echo "$filename" >> "$GITIGNORE_FILE"
+                ((FILE_COUNT=FILE_COUNT+1))
+            fi
+            echo "${TICK} $filename"
             break
-        fi
-        echo "$filename" >> "$GITIGNORE_FILE"
+        done
+    done    
 
-        ((FILE_COUNT++))
-    done
-
-    echo -e "\n $FILE_COUNT ${BOLD}FILENAMES${NC} added successfully."
-    echo -e "${TICK} ${RED}.gitignore${NC} Initialized in this directory."
+    echo -e "\n${TICK}${NC}${RED}.gitignore${NC} Initialized in this directory."
+    echo -e "${INFO}${NC}:"
+    echo -e "\t${BOLD}Files Added${NC}: $FILE_COUNT \n\t${BOLD}Directories Added${NC}: $DIR_COUNT"
 }
