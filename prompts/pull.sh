@@ -7,7 +7,7 @@ pull(){
 echo -e "${INFO} Checking if this is a Git repository..."
 
 if [ ! -d ".git" ]; then
-    echo -e "${RED}${BOLD} This is not a Git repository. ${NC}"
+    echo -e "${RED}${BOLD} No Git repository found. ${NC}"
     git init
 fi
 
