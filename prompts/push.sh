@@ -6,7 +6,8 @@ IFS=$'\n\t'
 
 # IMPORTS:
 source "$RCOMMANDS_ROOT/configs/msg.sh"
-COMMIT_MSG="$1"
+COMMIT_MSG="$2"
+echo "$COMMIT_MSG"
 
 push() {
 
