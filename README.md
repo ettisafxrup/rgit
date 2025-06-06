@@ -44,7 +44,7 @@ rgit help
   It automatically checks for initialization, initializes if it's not, creates branches and commits and directly pushes to the repository in just a single prompt!
 
 ```bash
-rgit push
+rgit push "Hello, World"
 ```
 
 - pull <br>
