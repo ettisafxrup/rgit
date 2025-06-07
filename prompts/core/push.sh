@@ -8,11 +8,12 @@ IFS=$'\n\t'
 source "$RCOMMANDS_ROOT/configs/msg.sh"
 
 push() {
-    COMMIT_MSG="$2"
+    COMMIT_MSG="$1"
     if [ -z "$COMMIT_MSG" ]; then
         echo -e "$COMMIT_EMPTY"
         read -ep "${GREEN}${BOLD}>${NC}" COMMIT_MSG
     else
+        echo -e "(Added) ${BOLD}Message${NC}${GREEN}${BOLD}<<${NC} $COMMIT_MSG"
         git commit -m "$COMMIT_MSG"
     fi
     echo "Commit Message: $COMMIT_MSG"
