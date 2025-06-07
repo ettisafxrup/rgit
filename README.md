@@ -1,35 +1,35 @@
 # rgit — Git Command Macro Tool
 
-**rgit** is a lightweight command-line macro tool designed to speed up and simplify your Git workflow. It provides shortcuts for common Git commands like push, pull, and branch rename — saving you time and keystrokes.
+`rgit` is a lightweight command-line macro tool designed to speed up and simplify your Git workflow. It provides shortcuts for common Git commands like push, pull, and branch rename — saving you time and keystrokes.
 
 ---
 
-**Current Version: v1.1.0**
+📦 **Current Version: v1.1.0**
 
-- Bug fixes
-- New Features: rgit readme, rgit forge, rgit license
-- Updated generating gitignore file, rgit ignore.
-
----
-
-## Features
-
-- Simplified Git command aliases
-- Color-coded terminal output for better readability
-- Interactive prompts for safer operations
-- Easily extendable with custom scripts
+- 🤷‍♀️ Patch update: Minor bug fixes
+- ✨ New Features: `rgit readme`, `rgit archi`, `rgit license`
+- 🔄 Improved: updated `gitignore` generation (`rgit ignore`)
 
 ---
 
-## Installation
+## 🦋 Features
 
-Download the installer from <a href="https://github.com/ettisafxrup/rgit/blob/main/installer/rgit.exe" download>here</a> and install.
-<br>
+- 🕶 Simplified Git command aliases
+- 🎒 Ready-made resources for project initialization.
+- 🎨 Color‑coded terminal output for better readability
+- 🔒 Interactive prompts for safer operations
+- 🔧 Easily extendable with custom scripts
+
+---
+
+## 📥 Installation
+
+Download the installer from <a href="https://github.com/ettisafxrup/rgit/blob/main/installer/rgit.exe" download>here</a> and install.  
 That's it, you're just ready to go! Enjoy <b>rgit</b> commands directly in your terminal!
 
 ---
 
-## Usage
+## 🚀 Kickstart
 
 Open your terminal (Git Bash, Linux shell, or Windows CMD with the proper environment) and run:
 
@@ -37,85 +37,118 @@ Open your terminal (Git Bash, Linux shell, or Windows CMD with the proper enviro
 rgit help
 ```
 
-## Commands
+It'll be showing you all the updated commands in the terminal.
 
-- push <br>
+## 📁 Project Structure — rgit
 
-  It automatically checks for initialization, initializes if it's not, creates branches and commits and directly pushes to the repository in just a single prompt!
+```text
 
-```bash
-rgit push "Hello, World"
+📁 Application Structure:
+
+.
+├── 📂 assets
+│   ├── favicon.ico
+│   ├── working_rgit.iss
+├── 📂 configs
+│   ├── color.sh
+│   ├── msg.sh
+├── 📂 installer
+│   ├── rgit.exe
+├── LICENSE
+├── 📂 prompts
+│   ├── 📂 core
+│   │   ├── cleanup.sh
+│   │   ├── pull.sh
+│   │   ├── push.sh
+│   │   ├── rename.sh
+│   ├── 📂 create
+│   │   ├── archi.sh
+│   │   ├── forge.sh
+│   │   ├── ignore.sh
+│   │   ├── 📂 LICENSE
+│   │   │   ├── apache-2.0.txt
+│   │   │   ├── bsd-3-clause.txt
+│   │   │   ├── gpl-3.0.txt
+│   │   │   ├── mit.txt
+│   │   │   ├── unlicense.txt
+│   │   ├── license.sh
+│   │   ├── readme.sh
+│   ├── help.sh
+│   ├── 📂 info
+│   │   ├── login.sh
+│   │   ├── userinfo.sh
+│   ├── pull.sh
+│   ├── push.sh
+│   ├── rename.sh
+├── **rgit**
+
 ```
 
-- pull <br>
+## 🌸 Cloning Repository
 
-  It automatically checks for initialization and pulls the repository to the local work setup - likely a ready-to-work command.
+You can _fork_ the repo, or you can directly clone this repository locally.
 
-```bash
-rgit pull
-```
-
-- rename <br>
-
-  Changing a branch's name is way more easy with rgit. If I want to change a branch name from "test" to "dev, all I need to do is.
+🔧 Run this in your terminal:
 
 ```bash
-# rgit rename <current_branch_name>:<new_branch_name>
-# as an example:
-
-rgit rename test:dev
+git clone https://github.com/ettisafxrup/rgit
 ```
 
-- ignore <br>
+## 🤝 Contributing
 
-  create an .gitignore file by using rgit, more easily and way more fast.
+Feel free to contribute, we love contributions from the community! ❤  
+Whether it's fixing a bug or adding a feature, or improving this documentation — every it of help counts.
+
+🤔 **How to Contribute**
+
+---
+
+1. **Fork the repository**  
+   _forking the repository will be working, cloning locally won't work here._
+
+2. **Create a new branch**
 
 ```bash
-
-rgit ignore
-
-# Choose only the file names by 1,2,3... do 0 (zero) when you're done.
+git checkout -b feature/your-feature-name
 ```
 
-- readme <br>
-
-  create an README.md file by using rgit with a ready-to-go template.
+3. **Make and Commit your changes**
 
 ```bash
-
-rgit readme
-
-# It'll be asking for prompts, add one by one manually and hit enter when you're done.
+git commit -m "your Commit Message"
 ```
 
-It will give you all the list it can perform in the terminal.
+4. **Push your Fork**
 
-# Troubleshooting
+```bash
+git push origin feature/your-feature-name
+```
 
-- Make sure Git is installed and available in your terminal. (Having git installed is a must to use rgit)
+5. **Open a pull request**
 
-- Restart terminal after installation to refresh environment variables.
+We'll review your PR and get back to you soon!
 
-- If Windows Prompt having issues while running it, Use Git Bash on Windows for best compatibility.
+---
 
-###
+## 📚 Guidelines
 
-# License
+- Make sure ytour code follows the project's coding style.
+- Keep PRs focused and minimal. One change per pull request will be the best.
+- Be respectful and constructive in taking major decisions.
 
-MIT License. See <a href="">LICENSE</a> file for details.
+## ⚒ Issues
 
-###
+Found a bug? Have a feautre request?  
+Please <a href="https://github.com/ettisafxrup/rgit/issues/new" target="_blank">open an issue</a> — we'd love to hear from you.
 
-# Contributing
+## 📄 License
 
-<b>rgit</b> is an open sourced toolkit. Feel free to contribute, open issues or submit pull requests!
+**[LICENSE](./LICENSE) ATTACHED**
 
-###
+> You are free to use, copy, odify and distribute this source.  
+> See the [LICENSE](./LICENSE) file for full legal terms.
 
-# Author
+---
 
-Ettisaf Rup
-<br>
-Author, rgit toolkit.
-<br>
-Ug, KUET CSE.
+> **GitHub**: [@ettisafxrup](https://github.com/ettisafxrup)  
+> **Repository**: [https://github.com/ettisafxrup/rgit](https://github.com/ettisafxrup/rgit)
