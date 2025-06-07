@@ -143,7 +143,7 @@ Please <a href="https://github.com/ettisafxrup/rgit/issues/new" target="_blank">
 
 ## 📄 License
 
-**[LICENSE](./LICENSE) ATTACHED**
+The project is under the license of MIT.
 
 > You are free to use, copy, odify and distribute this source.  
 > See the [LICENSE](./LICENSE) file for full legal terms.
