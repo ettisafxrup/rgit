@@ -11,7 +11,7 @@ source "$RCOMMANDS_ROOT/prompts/core/cleanup.sh" # as rename
 # Importing: Create
 source "$RCOMMANDS_ROOT/prompts/create/readme.sh" # as readme
 source "$RCOMMANDS_ROOT/prompts/create/ignore.sh" # as ignore
-source "$RCOMMANDS_ROOT/prompts/create/forge.sh" # as forge
+source "$RCOMMANDS_ROOT/prompts/create/archi.sh" # as archi
 source "$RCOMMANDS_ROOT/prompts/create/license.sh" # as license
 # Importing: Info
 source "$RCOMMANDS_ROOT/prompts/info/userinfo.sh" # as userinfo
@@ -50,8 +50,8 @@ case "$COMMAND" in
   ignore)
     ignore "${2:-}"
     ;;
-  forge)
-    forge "${2:-}"
+  archi)
+    archi "${2:-}"
     ;;
   license)
     license "${2:-}"

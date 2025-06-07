@@ -5,14 +5,14 @@
 source "$RCOMMANDS_ROOT/configs/color.sh"
 source "$RCOMMANDS_ROOT/configs/msg.sh"
 
-source "$RCOMMANDS_ROOT/prompts/create/forge.sh" # Project Structure
+source "$RCOMMANDS_ROOT/prompts/create/archi.sh" # Project Structure
 source "$RCOMMANDS_ROOT/prompts/create/license.sh" # Project License
 
 readme(){
     echo -e "${BOLD}${BLUE}README generator started!${NC}"
     echo -e "${INFO} Generating Project Structure... \n"
     # Creating a forge of this project
-    forge
+    archi
     # Creating License if there is no license exists.
     if [ -f "LICENSE" ]; then
         LICENSE_NAME=$(head -n 1 LICENSE)

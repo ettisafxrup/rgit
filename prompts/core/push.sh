@@ -12,7 +12,6 @@ push() {
     read -ep "${GREEN}${BOLD}> ${NC}" COMMIT_MSG
 
     echo -e "${TICK} ${BOLD}Message ${NC}${GREEN}${BOLD}=>${NC} $COMMIT_MSG"
-    git commit -m "$COMMIT_MSG"
     echo "Commit Message: $COMMIT_MSG"
 
     if [ -d ".git" ]; then
