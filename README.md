@@ -7,7 +7,7 @@
 **Current Version: v1.1.0**
 
 - Bug fixes
-- New Feature: rgit readme
+- New Features: rgit readme, rgit forge, rgit license
 - Updated generating gitignore file, rgit ignore.
 
 ---
