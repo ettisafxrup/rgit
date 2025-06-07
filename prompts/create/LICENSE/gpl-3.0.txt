@@ -1,0 +1,8 @@
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
+
+Copyright (C) [year] [fullname]
+
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+
+[This is a shortened placeholder. Full GPL license is very long, you can get it from: https://www.gnu.org/licenses/gpl-3.0.txt]

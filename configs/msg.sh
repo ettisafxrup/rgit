@@ -8,8 +8,8 @@ TODAY=$(date +"%d %B %Y")
 
 # TICKS FOR TERMINAL MSGs
 INFO="${BLUE}${BOLD}[INFO]${NC}"
-TICK="${GREEN}${BOLD}[✓]${NC}"
-CROSS="${RED}${BOLD}[✗]${NC}"
+TICK="${GREEN}${BOLD}✓${NC}"
+CROSS="${RED}${BOLD}✗${NC}"
 
 # REMOTE DEFINING MSGs
 PROMPT_REMOTE_NAME="${BLUE}${BOLD}*${NC} Enter Remote name (e.g., origin):"
@@ -19,7 +19,7 @@ PROMPT_REPO_URL="${BLUE}${BOLD}*${NC} Enter Repository URL:"
 NO_GIT_REMOTE_FOUND="${BOLD}No git remotes found. Kindly add one__ ${NC}"
 
 # GIT Commit
-COMMIT_EMPTY="${YELLOW}[rgit]: Commit message is empty, Adding default commit...${NC}"
+COMMIT_EMPTY="${YELLOW}[rgit]: Commit message is empty! Add clean commit message:${NC}"
 
 # SUCCESS/ERROR MESSAGES
 SUCCESS="${GREEN}${BOLD}[rgit]: rgit executed successfully ${NC}"
