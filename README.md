@@ -80,7 +80,7 @@ It'll be showing you all the updated commands in the terminal.
 │   ├── pull.sh
 │   ├── push.sh
 │   ├── rename.sh
-├── **rgit**
+├── rgit (main_script)
 
 ```
 
@@ -132,13 +132,13 @@ We'll review your PR and get back to you soon!
 
 ## 📚 Guidelines
 
-- Make sure ytour code follows the project's coding style.
+- Make sure your code follows the project's coding style.
 - Keep PRs focused and minimal. One change per pull request will be the best.
 - Be respectful and constructive in taking major decisions.
 
 ## ⚒ Issues
 
-Found a bug? Have a feautre request?  
+Found a bug? Have a feature request?  
 Please <a href="https://github.com/ettisafxrup/rgit/issues/new" target="_blank">open an issue</a> — we'd love to hear from you.
 
 ## 📄 License

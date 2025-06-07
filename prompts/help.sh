@@ -41,5 +41,6 @@ help() {
     echo -e "   ${SILVER}${YELLOW}—${NC} Generates a project structure in a file named ARCHITECTURE"
     echo -e "   ${RED}${BOLD}#${NC} ${SILVER}rgit archi${NC}\n"
 
-    echo -e " ${INFO} Tip: Run ${BOLD}rgit <command> --help${NC} for individual usage.\n"
+    echo -e "Requires no setup, ready-to-go execute commands."
+    echo -e " ${INFO} Tip: Run ${BOLD}rgit <command> in your project directory${NC}.\n"
 }
