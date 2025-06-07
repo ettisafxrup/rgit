@@ -8,14 +8,11 @@ IFS=$'\n\t'
 source "$RCOMMANDS_ROOT/configs/msg.sh"
 
 push() {
-    COMMIT_MSG="$1"
-    if [ -z "$COMMIT_MSG" ]; then
-        echo -e "$COMMIT_EMPTY"
-        read -ep "${GREEN}${BOLD}>${NC}" COMMIT_MSG
-    else
-        echo -e "(Added) ${BOLD}Message${NC}${GREEN}${BOLD}<<${NC} $COMMIT_MSG"
-        git commit -m "$COMMIT_MSG"
-    fi
+    echo -e "Write your clean Commit Message:"
+    read -ep "${GREEN}${BOLD}> ${NC}" COMMIT_MSG
+
+    echo -e "${TICK} ${BOLD}Message ${NC}${GREEN}${BOLD}=>${NC} $COMMIT_MSG"
+    git commit -m "$COMMIT_MSG"
     echo "Commit Message: $COMMIT_MSG"
 
     if [ -d ".git" ]; then
