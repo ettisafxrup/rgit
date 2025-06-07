@@ -39,6 +39,45 @@ rgit help
 
 It'll be showing you all the updated commands in the terminal.
 
+## ⚙ Commands
+
+✅ Here's a list of available rgit commands:
+
+```text
+ > rgit push
+   — Automates init → commit → push
+   # rgit push "your commit message"
+
+ > rgit pull
+   — Pulls latest remote changes and updates local branch
+   # rgit pull
+
+ > rgit rename
+   — Renames current branch to a new one
+   # rgit rename current:new
+
+ > rgit cleanup
+   — Renames current branch to a new one
+   # rgit rename current:new
+
+ > rgit ignore
+   — Creates a smart .gitignore file
+   # rgit ignore
+
+ > rgit readme
+   — Generates a basic README.md file
+   # rgit readme
+
+ > rgit license
+   — Adds a LICENSE file (MIT by default)
+   # rgit license
+
+ > rgit archi
+   — Generates a project structure in a file named ARCHITECTURE
+   # rgit archi
+
+```
+
 ## 📁 Project Structure — rgit
 
 ```text
