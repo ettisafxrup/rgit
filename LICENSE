@@ -1,32 +1,8 @@
-RGIT - Git Authentication Manager  
-Copyright (c) 2025 Rup
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
 
-This program is free software: you can redistribute it and/or modify  
-it under the terms of the GNU General Public License as published by  
-the Free Software Foundation, either version 3 of the License, or  
-(at your option) any later version.
+Copyright (C) 2025 Qxtend
 
-**Additional Terms:**
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 
-1. **Non-Commercial Use Only**  
-   This software is licensed for personal, educational, or non-commercial use only.  
-   Any commercial use, including incorporation into proprietary software or services,  
-   is strictly prohibited without express written permission from the author.
-
-2. **Copyleft Requirement (GPLv3)**  
-   Any modified versions or derivative works must also be distributed  
-   under the terms of this license and be made fully open-source.
-
-3. **Patent Grant**  
-   This license explicitly grants a perpetual, worldwide, royalty-free patent license  
-   to use, make, sell, offer for sale, and import the software, under any contributor's patents  
-   that would be infringed by the use of their contribution.
-
-4. **No Warranty**  
-   This software is provided "as is", without warranty of any kind, express or implied.  
-   The entire risk as to the quality and performance of the program is with you.
-
-For the full text of the GNU General Public License v3, see:  
-<https://www.gnu.org/licenses/gpl-3.0.en.html>
-
-Contact the author at: **rup@yourdomain.com** for commercial licensing or inquiries.
+[This is a shortened placeholder. Full GPL license is very long, you can get it from: https://www.gnu.org/licenses/gpl-3.0.txt]

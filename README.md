@@ -182,7 +182,7 @@ Please <a href="https://github.com/ettisafxrup/rgit/issues/new" target="_blank">
 
 ## 📄 License
 
-RGIT is licensed under a modified GNU GPLv3 license with an additional **Non-Commercial Use** clause.  
+RGIT is licensed under GNU GPLv3 license with an additional **Non-Commercial Use** clause.  
 See the [LICENSE](./LICENSE) file for full terms.
 
 > You are free to use, copy, odify and distribute this source.  
