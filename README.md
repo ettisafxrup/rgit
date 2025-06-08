@@ -69,7 +69,7 @@ It'll be showing you all the updated commands in the terminal.
    # rgit readme
 
  > rgit license
-   — Adds a LICENSE file (MIT by default)
+   — Adds a LICENSE file with your choice.
    # rgit license
 
  > rgit archi
