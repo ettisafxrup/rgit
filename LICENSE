@@ -1,21 +1,32 @@
-MIT License
+RGIT - Git Authentication Manager  
+Copyright (c) 2025 Rup
 
-Copyright (c) 2025 Qx
+This program is free software: you can redistribute it and/or modify  
+it under the terms of the GNU General Public License as published by  
+the Free Software Foundation, either version 3 of the License, or  
+(at your option) any later version.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+**Additional Terms:**
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+1. **Non-Commercial Use Only**  
+   This software is licensed for personal, educational, or non-commercial use only.  
+   Any commercial use, including incorporation into proprietary software or services,  
+   is strictly prohibited without express written permission from the author.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. **Copyleft Requirement (GPLv3)**  
+   Any modified versions or derivative works must also be distributed  
+   under the terms of this license and be made fully open-source.
+
+3. **Patent Grant**  
+   This license explicitly grants a perpetual, worldwide, royalty-free patent license  
+   to use, make, sell, offer for sale, and import the software, under any contributor's patents  
+   that would be infringed by the use of their contribution.
+
+4. **No Warranty**  
+   This software is provided "as is", without warranty of any kind, express or implied.  
+   The entire risk as to the quality and performance of the program is with you.
+
+For the full text of the GNU General Public License v3, see:  
+<https://www.gnu.org/licenses/gpl-3.0.en.html>
+
+Contact the author at: **rup@yourdomain.com** for commercial licensing or inquiries.
