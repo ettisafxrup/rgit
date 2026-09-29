@@ -57,6 +57,12 @@ WizardSmallImageFile=wizard-small-100.bmp,wizard-small-200.bmp
 Compression=lzma2/max
 SolidCompression=yes
 
+; build.ps1 -SignCert defines Sign and the "rgitsign" tool (see scripts\windows\sign.ps1).
+#ifdef Sign
+SignTool=rgitsign
+SignedUninstaller=yes
+#endif
+
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 

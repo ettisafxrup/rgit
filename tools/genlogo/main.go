@@ -10,6 +10,7 @@
 // a branch curving away to the right, in amber on a deep navy tile.
 //
 // Run it from the repository root:  go run ./tools/genlogo
+
 package main
 
 import (

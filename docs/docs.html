@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation — rgit</title>
+  <meta name="description" content="Complete documentation for rgit: installation, every command in detail, options, presets, licenses and troubleshooting.">
+  <meta name="theme-color" content="#153040">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  </svg>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="rgit home"><img src="logo.svg" alt="" width="32" height="32">rgit <small>docs</small></a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Features</a>
+        <a href="docs.html" aria-current="page">Docs</a>
+        <a href="https://github.com/ettisafxrup/rgit">GitHub</a>
+      </nav>
+      <a class="btn btn-primary btn-sm nav-cta" href="index.html#download"><svg aria-hidden="true"><use href="#i-download"/></svg>Download</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#download">Download</a>
+      <a href="https://github.com/ettisafxrup/rgit">GitHub</a>
+    </nav>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <div class="container docs-layout">
+    <aside class="sidebar" aria-label="Documentation">
+      <label class="search">
+        <svg aria-hidden="true"><use href="#i-search"/></svg>
+        <input type="search" placeholder="Search the docs  ( / )" aria-label="Search the documentation">
+      </label>
+      <nav class="toc">
+        <div class="toc-group">
+          <p>Getting started</p>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#first-steps">First steps</a></li>
+            <li><a href="#upgrading">Upgrading from 1.x</a></li>
+            <li><a href="#uninstall">Uninstalling</a></li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <p>Basics</p>
+          <ul>
+            <li><a href="#how-it-works">How rgit works</a></li>
+            <li><a href="#questions">Questions &amp; --yes</a></li>
+            <li><a href="#global-flags">Global options</a></li>
+            <li><a href="#exit-codes">Exit codes</a></li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <p>Everyday</p>
+          <ul>
+            <li><a href="#cmd-push">push</a></li>
+            <li><a href="#cmd-pull">pull</a></li>
+            <li><a href="#cmd-sync">sync</a></li>
+            <li><a href="#cmd-status">status</a></li>
+            <li><a href="#cmd-log">log</a></li>
+            <li><a href="#cmd-undo">undo</a></li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <p>Branches</p>
+          <ul>
+            <li><a href="#cmd-new">new</a></li>
+            <li><a href="#cmd-switch">switch</a></li>
+            <li><a href="#cmd-rename">rename</a></li>
+            <li><a href="#cmd-cleanup">cleanup</a></li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <p>Project files</p>
+          <ul>
+            <li><a href="#cmd-ignore">ignore</a></li>
+            <li><a href="#cmd-license">license</a></li>
+            <li><a href="#cmd-readme">readme</a></li>
+            <li><a href="#cmd-archi">archi</a></li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <p>Setup</p>
+          <ul>
+            <li><a href="#cmd-clone">clone</a></li>
+            <li><a href="#cmd-login">login</a></li>
+            <li><a href="#cmd-whoami">whoami</a></li>
+            <li><a href="#cmd-open">open</a></li>
+            <li><a href="#cmd-doctor">doctor</a></li>
+            <li><a href="#cmd-version">version</a></li>
+            <li><a href="#cmd-help">help</a></li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <p>Reference</p>
+          <ul>
+            <li><a href="#presets">.gitignore presets</a></li>
+            <li><a href="#licenses">Licenses</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main id="main" class="doc">
+      <div class="mobile-toc">
+        <select aria-label="Jump to a topic"><option value="">Jump to a topic…</option></select>
+      </div>
+
+      <span class="kicker">Documentation</span>
+      <h1>rgit documentation</h1>
+      <p class="intro">Everything you need to install rgit and use every command. New to rgit? Start with <a href="#installation">Installation</a> and <a href="#first-steps">First steps</a>.</p>
+
+      <!-- ============================== Getting started ============================== -->
+
+      <section class="doc-section" id="overview" data-topic>
+        <h2 id="overview-title">Overview</h2>
+        <p>rgit is a companion for <a href="https://git-scm.com">git</a>. It turns the everyday routine of committing, pushing, pulling, branching and setting up a project into short, safe commands.</p>
+        <ul>
+          <li><strong>One command for common jobs.</strong> <code>rgit push</code> stages, commits and pushes in one go.</li>
+          <li><strong>Safe.</strong> rgit asks before it changes anything important, and it never throws away your uncommitted work.</li>
+          <li><strong>Works everywhere.</strong> It is a single program for Windows, macOS and Linux, and it runs in any terminal.</li>
+          <li><strong>Uses your git.</strong> Your logins, SSH keys and settings keep working as they are.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="installation" data-topic>
+        <h2>Installation</h2>
+        <p>rgit needs git 2.23 or newer. You can check your version with <code>git --version</code>.</p>
+
+        <h3 id="install-windows">Windows</h3>
+        <ol>
+          <li>Download <a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64-setup.exe">rgit-windows-x64-setup.exe</a>.</li>
+          <li>Run it. Choose <strong>Install for me only</strong> (no administrator rights needed) or <strong>Install for all users</strong>.</li>
+          <li>Keep <strong>Add rgit to the PATH</strong> ticked, so you can run rgit from any folder.</li>
+          <li>Open a <strong>new</strong> terminal window and run <code>rgit doctor</code>.</li>
+        </ol>
+        <div class="callout"><svg aria-hidden="true"><use href="#i-info"/></svg><p>If Windows shows “Windows protected your PC”, click <strong>More info</strong> and then <strong>Run anyway</strong>. This warning appears for new apps that are not yet widely downloaded.</p></div>
+        <p><strong>Portable version:</strong> download <a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64.exe">rgit-windows-x64.exe</a>, rename it to <code>rgit.exe</code> and put it in any folder on your PATH.</p>
+        <p><strong>Silent installation</strong>, for scripts or IT departments:</p>
+        <div class="code"><pre><code>rgit-windows-x64-setup.exe /VERYSILENT /SUPPRESSMSGBOXES /CURRENTUSER</code></pre></div>
+
+        <h3 id="install-macos">macOS</h3>
+        <p>Paste this into Terminal. It picks the right version for your Mac, checks the download and installs it:</p>
+        <div class="code wrap"><pre><code>curl -fsSL https://raw.githubusercontent.com/ettisafxrup/rgit/main/scripts/install.sh | sh</code></pre></div>
+        <p>To install by hand, download <a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-arm64">rgit-macos-arm64</a> (Apple Silicon) or <a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-x64">rgit-macos-x64</a> (Intel), then run:</p>
+        <div class="code"><pre><code>chmod +x ~/Downloads/rgit-macos-arm64
+sudo mv ~/Downloads/rgit-macos-arm64 /usr/local/bin/rgit
+xattr -d com.apple.quarantine /usr/local/bin/rgit</code></pre></div>
+
+        <h3 id="install-linux">Linux</h3>
+        <p>Works on any distribution:</p>
+        <div class="code wrap"><pre><code>curl -fsSL https://raw.githubusercontent.com/ettisafxrup/rgit/main/scripts/install.sh | sh</code></pre></div>
+        <p>The script installs to <code>/usr/local/bin</code>, or to <code>~/.local/bin</code> if it can't write there. To choose the folder yourself, set <code>RGIT_INSTALL_DIR</code> before running it.</p>
+        <p>To install by hand, download <a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-x64">rgit-linux-x64</a> or <a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-arm64">rgit-linux-arm64</a>, then run:</p>
+        <div class="code"><pre><code>chmod +x ~/Downloads/rgit-linux-x64
+sudo mv ~/Downloads/rgit-linux-x64 /usr/local/bin/rgit</code></pre></div>
+
+        <h3 id="install-go">With Go</h3>
+        <div class="code"><pre><code>go install github.com/ettisafxrup/rgit/cmd/rgit@latest</code></pre></div>
+      </section>
+
+      <section class="doc-section" id="first-steps" data-topic>
+        <h2>First steps</h2>
+        <ol>
+          <li><strong>Check your setup.</strong> <code>rgit doctor</code> tells you if anything is missing, and how to fix it.</li>
+          <li><strong>Tell git who you are.</strong> <code>rgit login</code> saves the name and email that appear on your commits.</li>
+          <li><strong>Push some work.</strong> In a project folder, run <code>rgit push "My first commit"</code>. If the folder isn't a git repository yet, rgit offers to create one and asks for the repository URL.</li>
+        </ol>
+        <p>A typical day with rgit:</p>
+        <div class="code"><pre><code>rgit pull                      # start from the latest code
+rgit new feature/search        # make a branch for your work
+rgit status                    # see what you've changed
+rgit push "Add search box"     # commit and push it
+rgit switch main               # go back to main
+rgit cleanup                   # remove branches that are merged</code></pre></div>
+      </section>
+
+      <section class="doc-section" id="upgrading" data-topic>
+        <h2>Upgrading from 1.x</h2>
+        <p>Run the new Windows installer. All your commands keep their names.</p>
+        <ul>
+          <li>An <strong>all-users</strong> installation removes the old shell version automatically.</li>
+          <li>A <strong>per-user</strong> installation reminds you to remove the old version from <strong>Settings → Apps</strong>. Please do, or Git Bash may keep running the old version.</li>
+        </ul>
+        <p><code>rgit userinfo</code> still works. It is now called <code>rgit whoami</code>.</p>
+      </section>
+
+      <section class="doc-section" id="uninstall" data-topic>
+        <h2>Uninstalling</h2>
+        <ul>
+          <li><strong>Windows:</strong> Settings → Apps → rgit → Uninstall. rgit is removed from your PATH too.</li>
+          <li><strong>macOS and Linux:</strong> delete the program, for example <code>sudo rm /usr/local/bin/rgit</code>.</li>
+        </ul>
+      </section>
+
+      <!-- ============================== Basics ============================== -->
+
+      <section class="doc-section" id="how-it-works" data-topic>
+        <h2>How rgit works</h2>
+        <p>rgit doesn't replace git. Every command runs the git that is already installed on your computer, in the right order and with safe options. This means:</p>
+        <ul>
+          <li>Your credentials, SSH keys, hooks and git settings are used exactly as before.</li>
+          <li>You can mix rgit and plain git freely. Everything rgit does shows up in your normal git history.</li>
+          <li>rgit works from any folder inside a repository, not only from its top folder.</li>
+        </ul>
+        <p>rgit shows its progress with small symbols:</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Symbol</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><code>✓</code></td><td>Something finished successfully</td></tr>
+            <tr><td><code>›</code></td><td>rgit is about to do something, such as pulling or pushing</td></tr>
+            <tr><td><code>•</code></td><td>Information</td></tr>
+            <tr><td><code>?</code></td><td>A question for you</td></tr>
+            <tr><td><code>!</code></td><td>A warning</td></tr>
+            <tr><td><code>✗</code></td><td>An error</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section class="doc-section" id="questions" data-topic>
+        <h2>Questions &amp; --yes</h2>
+        <p>Some commands ask before they do something important. Yes/no questions show the default answer in capitals: <code>[Y/n]</code> means Enter answers “yes”, and <code>[y/N]</code> means Enter answers “no”. Questions with a suggested answer show it in brackets, and pressing Enter accepts it.</p>
+        <p>Add <code>--yes</code> (or <code>-y</code>) to any command to answer every yes/no question with “yes” and accept every suggested answer. This is handy in scripts:</p>
+        <div class="code"><pre><code>rgit push -y "Nightly update"</code></pre></div>
+        <div class="callout"><svg aria-hidden="true"><use href="#i-info"/></svg><p><code>--yes</code> also says “yes” to warnings, for example when undoing a commit that is already pushed. Use it when you know what the command will do.</p></div>
+      </section>
+
+      <section class="doc-section" id="global-flags" data-topic>
+        <h2>Global options</h2>
+        <p>These work with every command, anywhere on the line:</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Option</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td><code>-y</code>, <code>--yes</code></td><td>Answer “yes” to every question and accept suggested answers</td></tr>
+            <tr><td><code>--no-color</code></td><td>Turn off colors. Setting the <code>NO_COLOR</code> environment variable does the same.</td></tr>
+            <tr><td><code>-h</code>, <code>--help</code></td><td>Show help for the command</td></tr>
+            <tr><td><code>-v</code>, <code>--version</code></td><td>Print the rgit version</td></tr>
+            <tr><td><code>--</code></td><td>Treat everything after it as text, for example <code>rgit push -- "-1 bug"</code></td></tr>
+          </tbody>
+        </table></div>
+        <p>Colors turn off automatically when the output goes to a file or another program.</p>
+      </section>
+
+      <section class="doc-section" id="exit-codes" data-topic>
+        <h2>Exit codes</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Code</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><code>0</code></td><td>Success</td></tr>
+            <tr><td><code>1</code></td><td>Something failed, or you answered “no” to a question</td></tr>
+            <tr><td><code>2</code></td><td>The command was typed incorrectly, for example with too many arguments or an unknown option</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <!-- ============================== Everyday ============================== -->
+
+      <section class="doc-section" id="everyday">
+        <h2>Everyday commands</h2>
+
+        <div class="cmd-doc" id="cmd-push" data-topic>
+          <h3>rgit push</h3>
+          <div class="meta"><span>Usage <b>rgit push [message]</b></span><span>Alias <b>p</b></span></div>
+          <p>Stages, commits and pushes all your changes in one step. Quotes around the message are optional.</p>
+          <h4>What it does</h4>
+          <ol>
+            <li>If the folder isn't a git repository, it asks to create one. New repositories start on the branch <code>main</code>.</li>
+            <li>If there is no remote, it asks for a name (<code>origin</code> by default) and the repository URL. You can type a full URL or GitHub's short form <code>owner/repo</code>.</li>
+            <li>In a brand-new repository, it matches the branch name the remote already uses, such as <code>main</code> or <code>master</code>.</li>
+            <li>It lists your changed files and asks whether to stage them all.</li>
+            <li>It commits them with your message. Without a message, it asks for one, and pressing Enter uses “Update &lt;today's date&gt;”.</li>
+            <li>It pulls the latest remote changes and puts your commit on top, so the push isn't rejected.</li>
+            <li>It pushes. The first push of a branch also links it to the remote branch.</li>
+          </ol>
+          <h4>Examples</h4>
+          <div class="code"><pre><code>rgit push "Fix the login redirect"
+rgit push Add dark mode        # quotes are optional
+rgit push -y                   # no questions; uses the default message</code></pre></div>
+          <h4>Good to know</h4>
+          <ul>
+            <li>If you answer “no” to staging, only what you had already staged is committed. If nothing was staged, rgit stops.</li>
+            <li>If there's nothing new to commit, rgit still pushes any commits that haven't been pushed yet.</li>
+            <li>If your files have merge conflicts, rgit stops and asks you to resolve them first.</li>
+            <li>If git doesn't know your name yet, rgit tells you to run <code>rgit login</code>.</li>
+          </ul>
+        </div>
+
+        <div class="cmd-doc" id="cmd-pull" data-topic>
+          <h3>rgit pull</h3>
+          <div class="meta"><span>Usage <b>rgit pull [branch]</b></span></div>
+          <p>Gets the latest changes from the remote. Your commits are placed on top of them, which keeps history tidy. Uncommitted changes are set aside and put back automatically, so you never lose work.</p>
+          <ul>
+            <li>Without a branch name, it pulls the branch you're on.</li>
+            <li>With a branch name, it pulls that branch from the remote into your current branch.</li>
+            <li>In a folder that isn't a repository yet, it offers to create one, asks for the remote, and downloads its files.</li>
+          </ul>
+          <h4>Examples</h4>
+          <div class="code"><pre><code>rgit pull
+rgit pull develop</code></pre></div>
+          <h4>If there are conflicts</h4>
+          <p>When your changes and the remote changes touch the same lines, rgit stops and explains what to do. Fix the files, then run <code>git add &lt;file&gt;</code> and <code>git rebase --continue</code>. To cancel, run <code>git rebase --abort</code>.</p>
+        </div>
+
+        <div class="cmd-doc" id="cmd-sync" data-topic>
+          <h3>rgit sync</h3>
+          <div class="meta"><span>Usage <b>rgit sync</b></span></div>
+          <p>Brings your current branch fully up to date in both directions. It pulls the remote changes and then pushes your own commits, without making a new commit. It's useful when you've committed with plain git and just want everything in sync.</p>
+          <div class="code"><pre><code>rgit sync</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-status" data-topic>
+          <h3>rgit status</h3>
+          <div class="meta"><span>Usage <b>rgit status</b></span><span>Alias <b>st</b></span></div>
+          <p>Shows your repository on one clear screen:</p>
+          <ul>
+            <li><strong>Branch:</strong> the branch you're on, and whether it is up to date, has commits to push or pull, or hasn't been pushed yet.</li>
+            <li><strong>Last commit:</strong> its short ID, message and age.</li>
+            <li><strong>Remote:</strong> where your repository is pushed to.</li>
+            <li><strong>Changes:</strong> how many files are staged, modified, new or in conflict, followed by the list of files.</li>
+            <li><strong>Stash:</strong> how many stashed changes you have, if any.</li>
+          </ul>
+          <div class="code"><pre><code>rgit status</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-log" data-topic>
+          <h3>rgit log</h3>
+          <div class="meta"><span>Usage <b>rgit log [-n count] [--all]</b></span><span>Alias <b>l</b></span></div>
+          <p>Shows recent commits as a compact, colorful graph, with the short ID, message, author, age and branch names.</p>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Option</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><code>-n &lt;count&gt;</code></td><td>How many commits to show (default: 15)</td></tr>
+              <tr><td><code>--all</code></td><td>Show every branch, not just the current one</td></tr>
+            </tbody>
+          </table></div>
+          <div class="code"><pre><code>rgit log
+rgit log -n 40 --all</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-undo" data-topic>
+          <h3>rgit undo</h3>
+          <div class="meta"><span>Usage <b>rgit undo</b></span></div>
+          <p>Takes back your last commit but keeps all of its changes staged. You can then fix the message, add a forgotten file, or split the work into smaller commits.</p>
+          <ul>
+            <li>If the commit has already been pushed, rgit warns you first and the default answer is “no”. Undoing a pushed commit means the remote no longer matches your branch.</li>
+            <li>It also works on the very first commit of a repository.</li>
+            <li>It doesn't undo merge commits. For those, use <code>git reset --merge HEAD~1</code>.</li>
+          </ul>
+          <div class="code"><pre><code>rgit undo
+rgit push "A better commit message"</code></pre></div>
+        </div>
+      </section>
+
+      <!-- ============================== Branches ============================== -->
+
+      <section class="doc-section" id="branches">
+        <h2>Branch commands</h2>
+
+        <div class="cmd-doc" id="cmd-new" data-topic>
+          <h3>rgit new</h3>
+          <div class="meta"><span>Usage <b>rgit new &lt;branch&gt;</b></span><span>Alias <b>branch</b></span></div>
+          <p>Creates a new branch and switches to it. Your uncommitted changes come along. Without a name, rgit asks for one. Names are checked against git's rules, so a mistake like <code>my..branch</code> is caught straight away.</p>
+          <div class="code"><pre><code>rgit new feature/login</code></pre></div>
+          <p>The branch exists only on your computer until you run <code>rgit push</code>.</p>
+        </div>
+
+        <div class="cmd-doc" id="cmd-switch" data-topic>
+          <h3>rgit switch</h3>
+          <div class="meta"><span>Usage <b>rgit switch [branch]</b></span><span>Aliases <b>sw</b>, <b>checkout</b></span></div>
+          <p>Switches to another branch. Without a name, it shows a numbered list of your branches to pick from.</p>
+          <p>If the branch exists only on the remote, for example one a teammate pushed, rgit creates a local copy that stays linked to it.</p>
+          <div class="code"><pre><code>rgit switch            # pick from a list
+rgit switch main</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-rename" data-topic>
+          <h3>rgit rename</h3>
+          <div class="meta"><span>Usage <b>rgit rename &lt;new&gt;</b> · <b>&lt;old&gt;:&lt;new&gt;</b> · <b>&lt;old&gt; &lt;new&gt;</b></span><span>Alias <b>mv</b></span></div>
+          <p>Renames a branch. With just one name, the branch you're on is renamed.</p>
+          <p>If the old branch also exists on the remote, rgit asks whether to rename it there too. It pushes the new name first and only then deletes the old one, so nothing is lost if something goes wrong.</p>
+          <div class="code"><pre><code>rgit rename feature/auth
+rgit rename master:main
+rgit rename old-name new-name</code></pre></div>
+          <div class="callout"><svg aria-hidden="true"><use href="#i-info"/></svg><p>To rename your repository's <strong>default</strong> branch on GitHub, first change the default branch in the repository settings. GitHub won't delete the current default branch.</p></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-cleanup" data-topic>
+          <h3>rgit cleanup</h3>
+          <div class="meta"><span>Usage <b>rgit cleanup [base] [--prune]</b></span><span>Alias <b>clean</b></span></div>
+          <p>Deletes local branches whose work is already merged into the base branch. rgit shows you the list and asks before deleting anything.</p>
+          <ul>
+            <li>The base branch is your repository's main branch (usually <code>main</code> or <code>master</code>), unless you name another one.</li>
+            <li><code>main</code>, <code>master</code>, <code>develop</code>, the base branch and the branch you're on are never deleted.</li>
+            <li>Only branches on your computer are deleted. The remote isn't touched.</li>
+          </ul>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Option</th><th>What it does</th></tr></thead>
+            <tbody><tr><td><code>--prune</code></td><td>First forget remote branches that were deleted on the server</td></tr></tbody>
+          </table></div>
+          <div class="code"><pre><code>rgit cleanup
+rgit cleanup develop --prune</code></pre></div>
+        </div>
+      </section>
+
+      <!-- ============================== Project files ============================== -->
+
+      <section class="doc-section" id="project-files">
+        <h2>Project file commands</h2>
+
+        <div class="cmd-doc" id="cmd-ignore" data-topic>
+          <h3>rgit ignore</h3>
+          <div class="meta"><span>Usage <b>rgit ignore [preset | pattern]...</b></span></div>
+          <p>Adds entries to your <code>.gitignore</code> file, which tells git which files to leave out. rgit creates the file if needed and never adds the same entry twice.</p>
+          <ul>
+            <li><strong>Presets:</strong> ready-made lists for languages, editors and operating systems, such as <code>node</code> or <code>vscode</code>. See <a href="#presets">all presets</a>.</li>
+            <li><strong>Patterns:</strong> anything else you type is added as it is, for example <code>"*.pem"</code> or <code>secrets/</code>.</li>
+            <li><strong>No arguments:</strong> rgit lists the files and folders in the current folder. Pick them by number, like <code>1,3,5-7</code>, and then choose presets.</li>
+          </ul>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Option</th><th>What it does</th></tr></thead>
+            <tbody><tr><td><code>--list</code></td><td>Show the available presets</td></tr></tbody>
+          </table></div>
+          <div class="code"><pre><code>rgit ignore                         # pick from a list
+rgit ignore go vscode windows
+rgit ignore node "*.pem" tmp/</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-license" data-topic>
+          <h3>rgit license</h3>
+          <div class="meta"><span>Usage <b>rgit license [license]</b></span></div>
+          <p>Creates a <code>LICENSE</code> file. Without a name, rgit shows a menu of <a href="#licenses">10 licenses</a>. It then asks for the year (this year by default) and the copyright holder (your git name by default). Short names work too: <code>mit</code>, <code>apache</code>, <code>gpl</code>.</p>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Option</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><code>--name &lt;holder&gt;</code></td><td>The copyright holder, a person or organization</td></tr>
+              <tr><td><code>--year &lt;year&gt;</code></td><td>The copyright year</td></tr>
+            </tbody>
+          </table></div>
+          <div class="code"><pre><code>rgit license
+rgit license mit
+rgit license apache-2.0 --name "Acme Inc." --year 2026</code></pre></div>
+          <p>If a <code>LICENSE</code> file already exists, rgit asks before replacing it.</p>
+        </div>
+
+        <div class="cmd-doc" id="cmd-readme" data-topic>
+          <h3>rgit readme</h3>
+          <div class="meta"><span>Usage <b>rgit readme</b></span></div>
+          <p>Creates a <code>README.md</code> for your project by asking a few questions:</p>
+          <ol>
+            <li>The project title (the folder name by default).</li>
+            <li>A short description.</li>
+            <li>The command to run the project, such as <code>npm run dev</code> (optional).</li>
+            <li>Your GitHub <code>owner/repo</code>. rgit skips this question when your remote is already on GitHub.</li>
+            <li>If there's no <code>LICENSE</code> yet, whether to add one.</li>
+          </ol>
+          <p>The README includes a description, setup steps, the project's folder structure, contribution guidelines and license information. If a README already exists, rgit asks before replacing it.</p>
+          <div class="code"><pre><code>rgit readme</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-archi" data-topic>
+          <h3>rgit archi</h3>
+          <div class="meta"><span>Usage <b>rgit archi</b></span><span>Alias <b>tree</b></span></div>
+          <p>Saves your project's folder structure as a tree in a file called <code>ARCHITECTURE</code>.</p>
+          <ul>
+            <li>Inside a git repository, it shows exactly the files git sees, so everything in <code>.gitignore</code> is left out.</li>
+            <li>Elsewhere, it skips common clutter such as hidden files, <code>node_modules</code>, build folders and log files.</li>
+          </ul>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Option</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><code>-o &lt;file&gt;</code></td><td>Save to another file (default: <code>ARCHITECTURE</code>)</td></tr>
+              <tr><td><code>--depth &lt;levels&gt;</code></td><td>Only go this many folders deep (0 means no limit)</td></tr>
+              <tr><td><code>--print</code></td><td>Show the tree in the terminal instead of saving it</td></tr>
+            </tbody>
+          </table></div>
+          <div class="code"><pre><code>rgit archi
+rgit archi --print --depth 2</code></pre></div>
+        </div>
+      </section>
+
+      <!-- ============================== Setup ============================== -->
+
+      <section class="doc-section" id="setup">
+        <h2>Setup commands</h2>
+
+        <div class="cmd-doc" id="cmd-clone" data-topic>
+          <h3>rgit clone</h3>
+          <div class="meta"><span>Usage <b>rgit clone &lt;repository&gt; [folder]</b></span></div>
+          <p>Downloads a repository. For GitHub, <code>owner/repo</code> is enough. Any other URL works as usual. The folder is named after the repository unless you choose a name.</p>
+          <div class="code"><pre><code>rgit clone ettisafxrup/rgit
+rgit clone https://gitlab.com/group/project.git my-folder</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-login" data-topic>
+          <h3>rgit login</h3>
+          <div class="meta"><span>Usage <b>rgit login</b></span></div>
+          <p>Asks for your name and email and saves them as the identity used on your commits, for all repositories on this computer. rgit checks that the email looks valid.</p>
+          <p>Inside a repository with a remote, rgit also checks that you can reach it. If you can't, it helps you find out why.</p>
+          <div class="code"><pre><code>rgit login</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-whoami" data-topic>
+          <h3>rgit whoami</h3>
+          <div class="meta"><span>Usage <b>rgit whoami</b></span><span>Aliases <b>userinfo</b>, <b>me</b></span></div>
+          <p>Shows the name and email your commits are made with, and tells you if the current repository uses its own identity.</p>
+          <div class="code"><pre><code>rgit whoami</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-open" data-topic>
+          <h3>rgit open</h3>
+          <div class="meta"><span>Usage <b>rgit open [remote]</b></span><span>Alias <b>web</b></span></div>
+          <p>Opens your repository's web page in the browser. It works with GitHub, GitLab, Bitbucket and most other hosts. On GitHub, it opens the branch you're on.</p>
+          <div class="code"><pre><code>rgit open
+rgit open upstream</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-doctor" data-topic>
+          <h3>rgit doctor</h3>
+          <div class="meta"><span>Usage <b>rgit doctor</b></span></div>
+          <p>Checks that everything is set up correctly and explains how to fix each problem it finds:</p>
+          <ul>
+            <li>git is installed, and which version it is</li>
+            <li>your name and email are set</li>
+            <li>git can remember your password or token</li>
+            <li>rgit is on your PATH</li>
+            <li>inside a repository: you're on a branch, a remote is set, and there are no merge conflicts</li>
+          </ul>
+          <div class="code"><pre><code>rgit doctor</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-version" data-topic>
+          <h3>rgit version</h3>
+          <div class="meta"><span>Usage <b>rgit version</b></span></div>
+          <p>Prints the rgit version and your system. <code>rgit --version</code> prints just the version number.</p>
+          <div class="code"><pre><code>rgit version</code></pre></div>
+        </div>
+
+        <div class="cmd-doc" id="cmd-help" data-topic>
+          <h3>rgit help</h3>
+          <div class="meta"><span>Usage <b>rgit help [command]</b></span></div>
+          <p>Shows all commands, or detailed help with examples for one command. <code>rgit &lt;command&gt; --help</code> does the same. If you mistype a command, rgit suggests the closest match.</p>
+          <div class="code"><pre><code>rgit help
+rgit help push
+rgit push --help</code></pre></div>
+        </div>
+      </section>
+
+      <!-- ============================== Reference ============================== -->
+
+      <section class="doc-section" id="presets" data-topic>
+        <h2>.gitignore presets</h2>
+        <p>Use these names with <a href="#cmd-ignore">rgit ignore</a>. The other accepted names also work.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Preset</th><th>For</th><th>Also accepted</th></tr></thead>
+          <tbody>
+            <tr><td><code>node</code></td><td>JavaScript and TypeScript projects</td><td>js, javascript, ts, typescript</td></tr>
+            <tr><td><code>python</code></td><td>Python projects</td><td>py</td></tr>
+            <tr><td><code>go</code></td><td>Go projects</td><td>golang</td></tr>
+            <tr><td><code>java</code></td><td>Java, Maven and Gradle projects</td><td></td></tr>
+            <tr><td><code>rust</code></td><td>Rust projects</td><td></td></tr>
+            <tr><td><code>dotnet</code></td><td>C# and .NET projects</td><td>csharp, c#</td></tr>
+            <tr><td><code>cpp</code></td><td>C and C++ projects</td><td>c, c++</td></tr>
+            <tr><td><code>vscode</code></td><td>Visual Studio Code settings</td><td>code</td></tr>
+            <tr><td><code>jetbrains</code></td><td>IntelliJ, PyCharm, WebStorm and others</td><td>idea</td></tr>
+            <tr><td><code>windows</code></td><td>Windows system files</td><td>win</td></tr>
+            <tr><td><code>macos</code></td><td>macOS system files</td><td>mac, osx</td></tr>
+            <tr><td><code>linux</code></td><td>Linux system files</td><td></td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section class="doc-section" id="licenses" data-topic>
+        <h2>Licenses</h2>
+        <p>Use these names with <a href="#cmd-license">rgit license</a>.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Name</th><th>License</th></tr></thead>
+          <tbody>
+            <tr><td><code>mit</code></td><td>MIT License</td></tr>
+            <tr><td><code>apache-2.0</code></td><td>Apache License 2.0</td></tr>
+            <tr><td><code>gpl-3.0</code></td><td>GNU General Public License v3.0</td></tr>
+            <tr><td><code>bsd-3-clause</code></td><td>BSD 3-Clause License</td></tr>
+            <tr><td><code>bsl-1.0</code></td><td>Boost Software License 1.0</td></tr>
+            <tr><td><code>agpl-3.0</code></td><td>GNU Affero General Public License v3.0</td></tr>
+            <tr><td><code>lgpl-3.0</code></td><td>GNU Lesser General Public License v3.0</td></tr>
+            <tr><td><code>mpl-2.0</code></td><td>Mozilla Public License 2.0</td></tr>
+            <tr><td><code>unlicense</code></td><td>The Unlicense</td></tr>
+            <tr><td><code>cc-by-4.0</code></td><td>Creative Commons Attribution 4.0</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section class="doc-section" id="troubleshooting" data-topic>
+        <h2>Troubleshooting</h2>
+
+        <h3 id="ts-not-found">“rgit is not recognized” or “command not found”</h3>
+        <p>Open a <strong>new</strong> terminal window. Terminals that were already open don't see PATH changes. On Windows, if it still doesn't work, run the installer again with <strong>Add rgit to the PATH</strong> ticked. On macOS and Linux, make sure the folder you installed to is on your PATH.</p>
+
+        <h3 id="ts-old-version">Git Bash runs the old rgit 1.x</h3>
+        <p>Run <code>type rgit</code> to see which one Git Bash uses. Remove the old version from <strong>Settings → Apps</strong>.</p>
+
+        <h3 id="ts-identity">“git does not know who you are yet”</h3>
+        <p>Run <code>rgit login</code> once to set your name and email.</p>
+
+        <h3 id="ts-auth">The push asks for a password or fails to sign in</h3>
+        <p>Run <code>rgit doctor</code> to check whether git can store your credentials. GitHub no longer accepts account passwords for pushing, so use a personal access token, an SSH key, or the Git Credential Manager that comes with Git for Windows.</p>
+
+        <h3 id="ts-conflicts">“The rebase stopped because of conflicts”</h3>
+        <p>Your changes and the remote's changes touch the same lines. Open the files git lists, choose what to keep, then run <code>git add &lt;file&gt;</code> and <code>git rebase --continue</code>. To go back to how things were, run <code>git rebase --abort</code>.</p>
+
+        <h3 id="ts-mac">macOS says rgit “cannot be opened”</h3>
+        <p>Run <code>xattr -d com.apple.quarantine /usr/local/bin/rgit</code> once. The one-line installer does this for you.</p>
+
+        <h3 id="ts-more">Still stuck?</h3>
+        <p><a href="https://github.com/ettisafxrup/rgit/issues/new">Open an issue on GitHub</a>. Include what you ran and the output of <code>rgit doctor</code>.</p>
+      </section>
+
+      <p class="no-results" hidden>Nothing matches your search. Try another word.</p>
+
+      <div class="doc-foot">
+        <span>Found a mistake in these docs? <a href="https://github.com/ettisafxrup/rgit/issues/new">Let us know</a>.</span>
+        <a href="index.html#download">Download rgit →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><img src="logo.svg" alt="" width="28" height="28" loading="lazy" decoding="async">rgit</a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="https://github.com/ettisafxrup/rgit">Source code</a>
+        <a href="https://github.com/ettisafxrup/rgit/releases">Releases</a>
+        <a href="https://github.com/ettisafxrup/rgit/issues/new">Report an issue</a>
+        <a href="https://github.com/ettisafxrup/rgit/blob/main/LICENSE">MIT License</a>
+      </nav>
+      <span>© <span data-year>2026</span> Ettisaf Rup · Made in Bangladesh</span>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Back to top"><svg aria-hidden="true"><use href="#i-up"/></svg></button>
+</body>
+</html>

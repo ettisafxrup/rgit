@@ -11,6 +11,7 @@
 #define VERSION_TEXT STRINGIFY(RGIT_VERSION)
 
 1 ICON "../../assets/rgit.ico"
+1 24 "rgit.manifest"  // 24 = application manifest
 
 VS_VERSION_INFO VERSIONINFO
 FILEVERSION     RGIT_VERSION_NUM
@@ -26,7 +27,7 @@ BEGIN
       VALUE "FileDescription",  "rgit - git, without the ceremony"
       VALUE "FileVersion",      VERSION_TEXT
       VALUE "InternalName",     "rgit"
-      VALUE "LegalCopyright",   "GNU General Public License v3.0"
+      VALUE "LegalCopyright",   "Copyright (c) 2026 Ettisaf Rup. MIT License."
       VALUE "OriginalFilename", "rgit.exe"
       VALUE "ProductName",      "rgit"
       VALUE "ProductVersion",   VERSION_TEXT

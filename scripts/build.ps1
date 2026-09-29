@@ -6,13 +6,18 @@
     .\scripts\build.ps1                 # test, build dist\rgit.exe and the installer
     .\scripts\build.ps1 -All            # also build Linux and macOS binaries
     .\scripts\build.ps1 -SkipTests -SkipInstaller
+    .\scripts\build.ps1 -All -SignCert 0123ABCD...   # sign the Windows files
+
+    -SignCert takes the thumbprint of a code-signing certificate installed in
+    Windows (or set RGIT_SIGN_CERT). Without it, the files are left unsigned.
 #>
 param(
     [string]$Version,
     [switch]$All,
     [switch]$SkipTests,
     [switch]$SkipInstaller,
-    [switch]$Assets   # regenerate the logo, icon and installer artwork
+    [switch]$Assets,   # regenerate the logo, icon and installer artwork
+    [string]$SignCert = $env:RGIT_SIGN_CERT
 )
 
 $ErrorActionPreference = 'Stop'
@@ -89,6 +94,14 @@ foreach ($t in $targets) {
     }
 }
 
+$signScript = Join-Path $PSScriptRoot 'windows\sign.ps1'
+if ($SignCert) {
+    Step 'Signing dist\rgit-windows-x64.exe'
+    & $signScript -Path 'dist\rgit-windows-x64.exe' -Thumbprint $SignCert
+} else {
+    Write-Host "`n  Windows files are not code-signed (no -SignCert given)." -ForegroundColor Yellow
+}
+
 if (-not $SkipInstaller) {
     $iscc = Get-Command iscc -ErrorAction SilentlyContinue
     if (-not $iscc) {
@@ -99,7 +112,14 @@ if (-not $SkipInstaller) {
 
     Step 'Building the installer -> dist\rgit-windows-x64-setup.exe'
     $isccPath = if ($iscc.Source) { $iscc.Source } else { $iscc.FullName }
-    Invoke-Checked $isccPath @('/Q', "/DAppVersion=$Version", 'installer\rgit.iss')
+    $isccArgs = @('/Q', "/DAppVersion=$Version")
+    if ($SignCert) {
+        # Inno Setup runs this command for the installer and the uninstaller;
+        # it replaces $q with a quote and $f with the file to sign.
+        $command = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File $q' + $signScript + '$q -Thumbprint ' + $SignCert + ' -Path $f'
+        $isccArgs += @('/DSign', "/Srgitsign=$command")
+    }
+    Invoke-Checked $isccPath ($isccArgs + 'installer\rgit.iss')
 }
 
 Step 'Writing checksums -> dist\SHA256SUMS.txt'

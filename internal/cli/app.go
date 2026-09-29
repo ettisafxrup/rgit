@@ -143,9 +143,6 @@ func (a *App) printVersion() {
 	a.UI.Printf("rgit %s\n", version.Version)
 }
 
-// Commands returns every registered command.
-func (a *App) Commands() []*Command { return a.commands }
-
 // Find looks a command up by name or alias.
 func (a *App) Find(name string) *Command {
 	name = strings.ToLower(name)
