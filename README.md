@@ -66,7 +66,7 @@ curl -fsSL https://raw.githubusercontent.com/ettisafxrup/rgit/main/scripts/insta
 > rgit needs [git](https://git-scm.com) installed on your computer.
 > For every command and option, see the **[documentation](https://ettisafxrup.github.io/rgit/docs.html)**.
 
-## 📙 rgit | Author
+### 📙 rgit: Engineer and Author
 
 <b>Ettisaf Rup</b><br>
 Software Engineer, XtendArena<br>
