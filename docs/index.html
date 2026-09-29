@@ -1,99 +1,282 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>rgit — git, without the ceremony</title>
-  <meta name="description" content="rgit is a fast, friendly command-line companion for git. Push, pull, sync, undo, branch and scaffold projects with single, safe commands. Free for Windows, Linux and macOS.">
-  <meta name="theme-color" content="#153040">
-  <meta property="og:title" content="rgit — git, without the ceremony">
-  <meta property="og:description" content="Everyday git chores as single, safe commands. Native on Windows, Linux and macOS.">
-  <meta property="og:image" content="og-image.png">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="logo.svg">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css">
-  <script>document.documentElement.classList.add("js");</script>
-  <script src="assets/site.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>rgit | git, without the ceremony</title>
+    <meta
+      name="description"
+      content="rgit is a fast, friendly command-line companion for git. Push, pull, sync, undo, branch and scaffold projects with single, safe commands. Free for Windows, Linux and macOS."
+    />
+    <meta name="theme-color" content="#153040" />
+    <meta property="og:title" content="rgit | git, without the ceremony" />
+    <meta
+      property="og:description"
+      content="Everyday git chores as single, safe commands. Native on Windows, Linux and macOS."
+    />
+    <meta property="og:image" content="og-image.png" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script>
+      document.documentElement.classList.add("js")
+    </script>
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
-    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
-    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
-    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-    <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></symbol>
-    <symbol id="i-windows" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.2 10.4 4v7.3H3zM11.4 3.9 21 2.5v8.8h-9.6zM3 12.3h7.4v7.4L3 18.6zM11.4 12.3H21v9.2l-9.6-1.4z"/></symbol>
-    <symbol id="i-mac" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3z"/></symbol>
-    <symbol id="i-linux" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="16" rx="2.5"/><path d="m7 10 3 2.5L7 15"/><path d="M12.5 15H17"/></symbol>
-  </svg>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol
+        id="i-download"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 3v12" />
+        <path d="m7 10 5 5 5-5" />
+        <path d="M5 21h14" />
+      </symbol>
+      <symbol
+        id="i-copy"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect x="9" y="9" width="12" height="12" rx="2" />
+        <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+      </symbol>
+      <symbol
+        id="i-check"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M20 6 9 17l-5-5" />
+      </symbol>
+      <symbol
+        id="i-book"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z" />
+        <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5" />
+      </symbol>
+      <symbol
+        id="i-code"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m16 18 6-6-6-6" />
+        <path d="m8 6-6 6 6 6" />
+      </symbol>
+      <symbol
+        id="i-menu"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </symbol>
+      <symbol
+        id="i-up"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m18 15-6-6-6 6" />
+      </symbol>
+      <symbol id="i-windows" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M3 5.2 10.4 4v7.3H3zM11.4 3.9 21 2.5v8.8h-9.6zM3 12.3h7.4v7.4L3 18.6zM11.4 12.3H21v9.2l-9.6-1.4z"
+        />
+      </symbol>
+      <symbol
+        id="i-mac"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M9 6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3z"
+        />
+      </symbol>
+      <symbol
+        id="i-linux"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect x="2.5" y="4" width="19" height="16" rx="2.5" />
+        <path d="m7 10 3 2.5L7 15" />
+        <path d="M12.5 15H17" />
+      </symbol>
+    </svg>
 
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="rgit home"><img src="logo.svg" alt="" width="32" height="32">rgit <small>v2.0</small></a>
-      <nav class="nav-links" aria-label="Main">
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="#top" aria-label="rgit home"
+          ><img src="logo.svg" alt="" width="32" height="32" />rgit
+          <small>v2.0</small></a
+        >
+        <nav class="nav-links" aria-label="Main">
+          <a href="#features">Features</a>
+          <a href="#commands">Commands</a>
+          <a href="#download">Download</a>
+          <a href="docs.html">Docs</a>
+          <a href="https://github.com/ettisafxrup/rgit">GitHub</a>
+        </nav>
+        <a class="btn btn-primary btn-sm nav-cta" href="#download"
+          ><svg aria-hidden="true"><use href="#i-download" /></svg>Download</a
+        >
+        <button
+          class="menu-btn"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg aria-hidden="true"><use href="#i-menu" /></svg>
+        </button>
+      </div>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
         <a href="#features">Features</a>
         <a href="#commands">Commands</a>
         <a href="#download">Download</a>
-        <a href="docs.html">Docs</a>
+        <a href="docs.html">Documentation</a>
         <a href="https://github.com/ettisafxrup/rgit">GitHub</a>
       </nav>
-      <a class="btn btn-primary btn-sm nav-cta" href="#download"><svg aria-hidden="true"><use href="#i-download"/></svg>Download</a>
-      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
-    </div>
-    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
-      <a href="#features">Features</a>
-      <a href="#commands">Commands</a>
-      <a href="#download">Download</a>
-      <a href="docs.html">Documentation</a>
-      <a href="https://github.com/ettisafxrup/rgit">GitHub</a>
-    </nav>
-    <div class="progress" aria-hidden="true"></div>
-  </header>
+      <div class="progress" aria-hidden="true"></div>
+    </header>
 
-  <main id="main">
-    <!-- ============================== Hero ============================== -->
-    <section class="hero" id="top">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow"><b>New</b> v2.0 · rebuilt in Go · native everywhere</span>
-          <h1>git, without the <span class="accent">ceremony</span>.</h1>
-          <p class="lead">rgit turns your everyday git routine into single, safe commands. Commit and push in one step, see your repository at a glance, and undo mistakes without searching for the right flags.</p>
+    <main id="main">
+      <!-- ============================== Hero ============================== -->
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow"
+              ><b>New</b> v2.0 · rebuilt in Go · native everywhere</span
+            >
+            <h1>git, without the <span class="accent">ceremony</span>.</h1>
+            <p class="lead">
+              rgit turns your everyday git routine into single, safe commands.
+              Commit and push in one step, see your repository at a glance, and
+              undo mistakes without searching for the right flags.
+            </p>
 
-          <div class="get" id="get">
-            <div class="get-main">
-              <a class="btn btn-primary" id="get-btn" href="#download">
-                <svg aria-hidden="true"><use href="#i-download"/></svg><span id="get-label">Choose your download</span>
-              </a>
-              <div class="get-file" id="get-file"><strong>Free &amp; open source (MIT) · v2.0.0</strong>Windows, macOS &amp; Linux</div>
-            </div>
-            <div class="code wrap" id="get-cmd" hidden>
-              <pre><code>curl -fsSL https://raw.githubusercontent.com/ettisafxrup/rgit/main/scripts/install.sh | sh</code></pre>
-            </div>
-            <div class="get-others">
-              <p>Other systems — direct downloads:</p>
-              <div class="chips">
-                <a class="chip" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64-setup.exe" download><svg aria-hidden="true"><use href="#i-windows"/></svg>Windows installer</a>
-                <a class="chip" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64.exe" download><svg aria-hidden="true"><use href="#i-windows"/></svg>Windows portable</a>
-                <a class="chip" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-arm64" download><svg aria-hidden="true"><use href="#i-mac"/></svg>macOS Apple Silicon</a>
-                <a class="chip" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-x64" download><svg aria-hidden="true"><use href="#i-mac"/></svg>macOS Intel</a>
-                <a class="chip" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-x64" download><svg aria-hidden="true"><use href="#i-linux"/></svg>Linux x64</a>
-                <a class="chip" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-arm64" download><svg aria-hidden="true"><use href="#i-linux"/></svg>Linux ARM64</a>
+            <div class="get" id="get">
+              <div class="get-main">
+                <a class="btn btn-primary" id="get-btn" href="#download">
+                  <svg aria-hidden="true"><use href="#i-download" /></svg
+                  ><span id="get-label">Choose your download</span>
+                </a>
+                <div class="get-file" id="get-file">
+                  <strong>Free &amp; open source (MIT) · v2.0.0</strong>Windows,
+                  macOS &amp; Linux
+                </div>
+              </div>
+              <div class="code wrap" id="get-cmd" hidden>
+                <pre><code>curl -fsSL https://raw.githubusercontent.com/ettisafxrup/rgit/main/scripts/install.sh | sh</code></pre>
+              </div>
+              <div class="get-others">
+                <p>Other systems —> direct downloads:</p>
+                <div class="chips">
+                  <a
+                    class="chip"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64-setup.exe"
+                    download
+                    ><svg aria-hidden="true"><use href="#i-windows" /></svg
+                    >Windows installer</a
+                  >
+                  <a
+                    class="chip"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64.exe"
+                    download
+                    ><svg aria-hidden="true"><use href="#i-windows" /></svg
+                    >Windows portable</a
+                  >
+                  <a
+                    class="chip"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-arm64"
+                    download
+                    ><svg aria-hidden="true"><use href="#i-mac" /></svg>macOS
+                    Apple Silicon</a
+                  >
+                  <a
+                    class="chip"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-x64"
+                    download
+                    ><svg aria-hidden="true"><use href="#i-mac" /></svg>macOS
+                    Intel</a
+                  >
+                  <a
+                    class="chip"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-x64"
+                    download
+                    ><svg aria-hidden="true"><use href="#i-linux" /></svg>Linux
+                    x64</a
+                  >
+                  <a
+                    class="chip"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-arm64"
+                    download
+                    ><svg aria-hidden="true"><use href="#i-linux" /></svg>Linux
+                    ARM64</a
+                  >
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="terminal typer" id="typer" aria-label="Animated examples of rgit commands">
-          <div class="terminal-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="title">~/projects/webapp — push</span><div class="typer-tabs"></div></div>
-<pre aria-live="off"><span class="t-prompt">$</span> rgit push "Add dark mode"
+          <div
+            class="terminal typer"
+            id="typer"
+            aria-label="Animated examples of rgit commands"
+          >
+            <div class="terminal-bar">
+              <span class="dot"></span><span class="dot"></span
+              ><span class="dot"></span
+              ><span class="title">~/projects/webapp —> push</span>
+              <div class="typer-tabs"></div>
+            </div>
+            <pre
+              aria-live="off"
+            ><span class="t-prompt">$</span> rgit push "Add dark mode"
  <span class="t-step">•</span> 3 changed files:
    <span class="t-mod">modified  </span> src/theme.css
    <span class="t-mod">modified  </span> src/app.js
@@ -103,373 +286,993 @@
  <span class="t-step">›</span> Pulling latest changes from <b>origin/main</b>
  <span class="t-step">›</span> Pushing <b>main</b>
  <span class="t-ok">✓</span> Pushed <b>main</b> to <b>origin/main</b></pre>
+          </div>
         </div>
+      </section>
+
+      <div class="stats">
+        <ul class="container" data-stagger>
+          <li data-reveal>
+            <strong data-count="21">21</strong><span>commands</span>
+          </li>
+          <li data-reveal>
+            <strong data-count="3">3</strong
+            ><span>platforms, one binary each</span>
+          </li>
+          <li data-reveal>
+            <strong data-count="12">12</strong><span>.gitignore presets</span>
+          </li>
+          <li data-reveal>
+            <strong data-count="10">10</strong><span>license templates</span>
+          </li>
+        </ul>
       </div>
-    </section>
 
-    <div class="stats">
-      <ul class="container" data-stagger>
-        <li data-reveal><strong data-count="21">21</strong><span>commands</span></li>
-        <li data-reveal><strong data-count="3">3</strong><span>platforms, one binary each</span></li>
-        <li data-reveal><strong data-count="12">12</strong><span>.gitignore presets</span></li>
-        <li data-reveal><strong data-count="10">10</strong><span>license templates</span></li>
-      </ul>
-    </div>
+      <!-- ============================== Why ============================== -->
+      <section id="why">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="kicker">Why rgit</span>
+            <h2>Spend your time on code, not on git plumbing</h2>
+            <p>
+              git is powerful, but the daily routine is a lot of typing. rgit
+              does that routine for you, the way an experienced developer would.
+            </p>
+          </div>
+          <div class="grid" data-stagger>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
+                </svg>
+              </div>
+              <h3>Ship in one command</h3>
+              <p>
+                <code>rgit push</code> replaces init, remote add, add, commit,
+                pull and push. It only asks when your answer matters.
+              </p>
+            </article>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <h3>Safe by default</h3>
+              <p>
+                Your local work is never lost. rgit asks before anything
+                destructive and warns you before you rewrite history that is
+                already pushed.
+              </p>
+            </article>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="4" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 18v3" />
+                </svg>
+              </div>
+              <h3>Truly cross-platform</h3>
+              <p>
+                A native app for Windows, Linux and macOS that works the same in
+                Command Prompt, PowerShell, Git Bash and every Unix shell.
+              </p>
+            </article>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="6" cy="18" r="2.5" />
+                  <circle cx="18" cy="6" r="2.5" />
+                  <path d="M6 15.5V4M6 11a7 7 0 0 1 9.5-4.8" />
+                </svg>
+              </div>
+              <h3>Powered by real git</h3>
+              <p>
+                rgit uses the git you already have. Your logins, SSH keys, hooks
+                and settings keep working exactly as before.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <!-- ============================== Why ============================== -->
-    <section id="why">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="kicker">Why rgit</span>
-          <h2>Spend your time on code, not on git plumbing</h2>
-          <p>git is powerful, but the daily routine is a lot of typing. rgit does that routine for you, the way an experienced developer would.</p>
-        </div>
-        <div class="grid" data-stagger>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
-            <h3>Ship in one command</h3>
-            <p><code>rgit push</code> replaces init, remote add, add, commit, pull and push. It only asks when your answer matters.</p>
-          </article>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
-            <h3>Safe by default</h3>
-            <p>Your local work is never lost. rgit asks before anything destructive and warns you before you rewrite history that is already pushed.</p>
-          </article>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
-            <h3>Truly cross-platform</h3>
-            <p>A native app for Windows, Linux and macOS that works the same in Command Prompt, PowerShell, Git Bash and every Unix shell.</p>
-          </article>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M6 15.5V4M6 11a7 7 0 0 1 9.5-4.8"/></svg></div>
-            <h3>Powered by real git</h3>
-            <p>rgit uses the git you already have. Your logins, SSH keys, hooks and settings keep working exactly as before.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== Compare ============================== -->
-    <section class="alt" aria-labelledby="compare-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="kicker">Less typing</span>
-          <h2 id="compare-title">Publishing a new project</h2>
-          <p>The same result, with the order and the edge cases handled for you.</p>
-        </div>
-        <div class="compare" data-stagger>
-          <div data-reveal>
-            <div class="compare-label">Plain git <span class="pill pill-muted">7 commands</span></div>
-            <div class="terminal">
-<pre><span class="t-prompt">$</span> git init
+      <!-- ============================== Compare ============================== -->
+      <section class="alt" aria-labelledby="compare-title">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="kicker">Less typing</span>
+            <h2 id="compare-title">Publishing a new project</h2>
+            <p>
+              The same result, with the order and the edge cases handled for
+              you.
+            </p>
+          </div>
+          <div class="compare" data-stagger>
+            <div data-reveal>
+              <div class="compare-label">
+                Plain git <span class="pill pill-muted">7 commands</span>
+              </div>
+              <div class="terminal">
+                <pre><span class="t-prompt">$</span> git init
 <span class="t-prompt">$</span> git branch -M main
 <span class="t-prompt">$</span> git remote add origin git@github.com:you/app.git
 <span class="t-prompt">$</span> git add --all
 <span class="t-prompt">$</span> git commit -m "Initial commit"
 <span class="t-prompt">$</span> git pull --rebase origin main   <span class="t-dim"># if GitHub made a README</span>
 <span class="t-prompt">$</span> git push --set-upstream origin main</pre>
+              </div>
             </div>
-          </div>
-          <div data-reveal>
-            <div class="compare-label">rgit <span class="pill pill-amber">1 command</span></div>
-            <div class="terminal">
-<pre><span class="t-prompt">$</span> rgit push "Initial commit"
+            <div data-reveal>
+              <div class="compare-label">
+                rgit <span class="pill pill-amber">1 command</span>
+              </div>
+              <div class="terminal">
+                <pre><span class="t-prompt">$</span> rgit push "Initial commit"
  <span class="t-ask">?</span> Initialize a new repository here? <span class="t-dim">[Y/n]</span>
  <span class="t-ask">?</span> Repository URL (or GitHub owner/repo): you/app
  <span class="t-ok">✓</span> Added remote origin → github.com/you/app.git
  <span class="t-step">•</span> Using branch <b>main</b> to match the remote.
  <span class="t-ok">✓</span> Committed <span class="t-hash">a1b2c3d</span> Initial commit
  <span class="t-ok">✓</span> Pushed <b>main</b> to <b>origin/main</b></pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============================== Features ============================== -->
-    <section id="features">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="kicker">Features</span>
-          <h2>Everything for the everyday workflow</h2>
-          <p>Focused commands that cover the daily routine, from your first commit to a tidy branch list.</p>
-        </div>
-        <div class="grid" data-stagger>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
-            <h3>Pull &amp; sync</h3>
-            <p>Pull without losing your uncommitted work. <code>rgit sync</code> brings a branch fully up to date in both directions.</p>
-          </article>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12"/><path d="m3 6 1 1 2-2M3 12l1 1 2-2M3 18l1 1 2-2"/></svg></div>
-            <h3>Status at a glance</h3>
-            <p>See your branch, what there is to push or pull, the last commit and every change on one clear screen.</p>
-          </article>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></div>
-            <h3>Undo without fear</h3>
-            <p><code>rgit undo</code> takes back your last commit but keeps every change, ready for you to fix and commit again.</p>
-          </article>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="9" r="2.5"/><path d="M6 8.5v7M18 11.5a6 6 0 0 1-6 6H8.5"/></svg></div>
-            <h3>Branching made simple</h3>
-            <p>Create branches, switch from a list, rename them everywhere at once, and clean up branches that are already merged.</p>
-          </article>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 14h6M9 18h4"/></svg></div>
-            <h3>Project scaffolding</h3>
-            <p>Generate a README, a LICENSE, a <code>.gitignore</code> and a project tree in seconds.</p>
-          </article>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <h3>Built-in doctor</h3>
-            <p><code>rgit doctor</code> checks your setup and tells you exactly how to fix anything that is wrong.</p>
-          </article>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
-            <h3>GitHub shortcuts</h3>
-            <p>Clone with <code>owner/repo</code> and open the current branch in your browser with <code>rgit open</code>.</p>
-          </article>
-          <article class="card hover" data-reveal>
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></svg></div>
-            <h3>Friendly everywhere</h3>
-            <p>rgit suggests the right command when you make a typo, gives you help for every command, and has a <code>--yes</code> mode for scripts.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== Commands ============================== -->
-    <section class="alt" id="commands">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="kicker">Commands</span>
-          <h2>21 commands, zero guesswork</h2>
-          <p>Click any command to read its full documentation.</p>
-        </div>
-
-        <div class="tabs" role="tablist" aria-label="Command groups">
-          <button class="tab" role="tab" id="tab-everyday" aria-controls="panel-everyday" aria-selected="true">Everyday</button>
-          <button class="tab" role="tab" id="tab-branches" aria-controls="panel-branches" aria-selected="false" tabindex="-1">Branches</button>
-          <button class="tab" role="tab" id="tab-files" aria-controls="panel-files" aria-selected="false" tabindex="-1">Project files</button>
-          <button class="tab" role="tab" id="tab-setup" aria-controls="panel-setup" aria-selected="false" tabindex="-1">Setup</button>
-        </div>
-
-        <div class="cmd-list" role="tabpanel" id="panel-everyday" aria-labelledby="tab-everyday">
-          <a class="cmd" href="docs.html#cmd-push"><code>rgit push [message]</code><span>Stage, commit and push everything in one step.</span></a>
-          <a class="cmd" href="docs.html#cmd-pull"><code>rgit pull [branch]</code><span>Get the latest changes and keep your local work safe.</span></a>
-          <a class="cmd" href="docs.html#cmd-sync"><code>rgit sync</code><span>Pull remote changes, then push your commits.</span></a>
-          <a class="cmd" href="docs.html#cmd-status"><code>rgit status</code><span>A clear overview of your repository.</span></a>
-          <a class="cmd" href="docs.html#cmd-log"><code>rgit log</code><span>A compact, colorful commit history.</span></a>
-          <a class="cmd" href="docs.html#cmd-undo"><code>rgit undo</code><span>Undo the last commit and keep its changes.</span></a>
-        </div>
-        <div class="cmd-list" role="tabpanel" id="panel-branches" aria-labelledby="tab-branches" hidden>
-          <a class="cmd" href="docs.html#cmd-new"><code>rgit new &lt;branch&gt;</code><span>Create a new branch and switch to it.</span></a>
-          <a class="cmd" href="docs.html#cmd-switch"><code>rgit switch [branch]</code><span>Switch branches, or pick one from a list.</span></a>
-          <a class="cmd" href="docs.html#cmd-rename"><code>rgit rename &lt;old&gt;:&lt;new&gt;</code><span>Rename a branch on your computer and on the remote.</span></a>
-          <a class="cmd" href="docs.html#cmd-cleanup"><code>rgit cleanup</code><span>Delete branches that are already merged.</span></a>
-        </div>
-        <div class="cmd-list" role="tabpanel" id="panel-files" aria-labelledby="tab-files" hidden>
-          <a class="cmd" href="docs.html#cmd-ignore"><code>rgit ignore [preset]…</code><span>Build a .gitignore from presets or a file picker.</span></a>
-          <a class="cmd" href="docs.html#cmd-license"><code>rgit license [name]</code><span>Add MIT, Apache, GPL or one of 7 other licenses.</span></a>
-          <a class="cmd" href="docs.html#cmd-readme"><code>rgit readme</code><span>Generate a complete README.md.</span></a>
-          <a class="cmd" href="docs.html#cmd-archi"><code>rgit archi</code><span>Save the project's folder tree to a file.</span></a>
-        </div>
-        <div class="cmd-list" role="tabpanel" id="panel-setup" aria-labelledby="tab-setup" hidden>
-          <a class="cmd" href="docs.html#cmd-clone"><code>rgit clone &lt;owner/repo&gt;</code><span>Download a repository, with a GitHub shortcut.</span></a>
-          <a class="cmd" href="docs.html#cmd-login"><code>rgit login</code><span>Set the name and email used in your commits.</span></a>
-          <a class="cmd" href="docs.html#cmd-whoami"><code>rgit whoami</code><span>Show who your commits are made as.</span></a>
-          <a class="cmd" href="docs.html#cmd-open"><code>rgit open</code><span>Open the repository in your browser.</span></a>
-          <a class="cmd" href="docs.html#cmd-doctor"><code>rgit doctor</code><span>Check that everything is set up correctly.</span></a>
-          <a class="cmd" href="docs.html#cmd-help"><code>rgit help [command]</code><span>Help for any command, right in the terminal.</span></a>
-        </div>
-
-        <p class="center-link"><a class="btn btn-ghost" href="docs.html"><svg aria-hidden="true"><use href="#i-book"/></svg>Read the full documentation</a></p>
-      </div>
-    </section>
-
-    <!-- ============================== Download ============================== -->
-    <section id="download">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="kicker">Download</span>
-          <h2>Install rgit in under a minute</h2>
-          <p>Pick your system. rgit is free and only needs <a href="https://git-scm.com">git</a> to be installed.</p>
-        </div>
-
-        <div class="os-tabs" role="tablist" aria-label="Operating system">
-          <button class="os-tab" role="tab" data-os="windows" id="os-tab-windows" aria-controls="os-windows" aria-selected="true"><svg aria-hidden="true"><use href="#i-windows"/></svg>Windows</button>
-          <button class="os-tab" role="tab" data-os="macos" id="os-tab-macos" aria-controls="os-macos" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#i-mac"/></svg>macOS</button>
-          <button class="os-tab" role="tab" data-os="linux" id="os-tab-linux" aria-controls="os-linux" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#i-linux"/></svg>Linux</button>
-        </div>
-
-        <!-- Windows -->
-        <div class="os-panel" role="tabpanel" id="os-windows" aria-labelledby="os-tab-windows">
-          <ol class="os-steps">
-            <li>
-              <h3>Download the installer</h3>
-              <p>Works on Windows 10 and 11.</p>
-              <div class="dl-row">
-                <a class="btn btn-primary" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64-setup.exe" download><svg aria-hidden="true"><use href="#i-download"/></svg>rgit-windows-x64-setup.exe</a>
-                <a class="btn btn-ghost" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64.exe" download>Portable .exe (no install)</a>
+      <!-- ============================== Features ============================== -->
+      <section id="features">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="kicker">Features</span>
+            <h2>Everything for the everyday workflow</h2>
+            <p>
+              Focused commands that cover the daily routine, from your first
+              commit to a tidy branch list.
+            </p>
+          </div>
+          <div class="grid" data-stagger>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 12a9 9 0 1 1-3-6.7L21 8" />
+                  <path d="M21 3v5h-5" />
+                </svg>
               </div>
-            </li>
-            <li>
-              <h3>Run it</h3>
-              <p>Choose <strong>Install for me only</strong> (no admin rights needed) and keep <strong>Add rgit to the PATH</strong> ticked. If Windows shows “Windows protected your PC”, click <strong>More info → Run anyway</strong>.</p>
-            </li>
-            <li>
-              <h3>Check it works</h3>
-              <p>Open a <strong>new</strong> Command Prompt, PowerShell or Git Bash window and run:</p>
-              <div class="code"><pre><code>rgit doctor</code></pre></div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- macOS -->
-        <div class="os-panel" role="tabpanel" id="os-macos" aria-labelledby="os-tab-macos" hidden>
-          <ol class="os-steps">
-            <li>
-              <h3>Install with one command</h3>
-              <p>Paste this into Terminal. It picks the right version for your Mac and installs it for you.</p>
-              <div class="code wrap"><pre><code>curl -fsSL https://raw.githubusercontent.com/ettisafxrup/rgit/main/scripts/install.sh | sh</code></pre></div>
-              <p class="or">or download it yourself</p>
-              <div class="dl-row">
-                <a class="btn btn-primary" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-arm64" download><svg aria-hidden="true"><use href="#i-download"/></svg>Apple Silicon (M1 and later)</a>
-                <a class="btn btn-ghost" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-x64" download>Intel Mac</a>
+              <h3>Pull &amp; sync</h3>
+              <p>
+                Pull without losing your uncommitted work.
+                <code>rgit sync</code> brings a branch fully up to date in both
+                directions.
+              </p>
+            </article>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M9 6h12M9 12h12M9 18h12" />
+                  <path d="m3 6 1 1 2-2M3 12l1 1 2-2M3 18l1 1 2-2" />
+                </svg>
               </div>
-            </li>
-            <li>
-              <h3>If you downloaded it yourself</h3>
-              <p>Move it into place and allow it to run (use <code>rgit-macos-x64</code> on Intel):</p>
-              <div class="code wrap"><pre><code>chmod +x ~/Downloads/rgit-macos-arm64
+              <h3>Status at a glance</h3>
+              <p>
+                See your branch, what there is to push or pull, the last commit
+                and every change on one clear screen.
+              </p>
+            </article>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M9 14 4 9l5-5" />
+                  <path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" />
+                </svg>
+              </div>
+              <h3>Undo without fear</h3>
+              <p>
+                <code>rgit undo</code> takes back your last commit but keeps
+                every change, ready for you to fix and commit again.
+              </p>
+            </article>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="6" cy="6" r="2.5" />
+                  <circle cx="6" cy="18" r="2.5" />
+                  <circle cx="18" cy="9" r="2.5" />
+                  <path d="M6 8.5v7M18 11.5a6 6 0 0 1-6 6H8.5" />
+                </svg>
+              </div>
+              <h3>Branching made simple</h3>
+              <p>
+                Create branches, switch from a list, rename them everywhere at
+                once, and clean up branches that are already merged.
+              </p>
+            </article>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+                  />
+                  <path d="M14 3v6h6M9 14h6M9 18h4" />
+                </svg>
+              </div>
+              <h3>Project scaffolding</h3>
+              <p>
+                Generate a README, a LICENSE, a <code>.gitignore</code> and a
+                project tree in seconds.
+              </p>
+            </article>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </div>
+              <h3>Built-in doctor</h3>
+              <p>
+                <code>rgit doctor</code> checks your setup and tells you exactly
+                how to fix anything that is wrong.
+              </p>
+            </article>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path
+                    d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"
+                  />
+                </svg>
+              </div>
+              <h3>GitHub shortcuts</h3>
+              <p>
+                Clone with <code>owner/repo</code> and open the current branch
+                in your browser with <code>rgit open</code>.
+              </p>
+            </article>
+            <article class="card hover" data-reveal>
+              <div class="icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="4" width="18" height="16" rx="2" />
+                  <path d="m7 9 3 3-3 3M13 15h4" />
+                </svg>
+              </div>
+              <h3>Friendly everywhere</h3>
+              <p>
+                rgit suggests the right command when you make a typo, gives you
+                help for every command, and has a <code>--yes</code> mode for
+                scripts.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== Commands ============================== -->
+      <section class="alt" id="commands">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="kicker">Commands</span>
+            <h2>21 commands, zero guesswork</h2>
+            <p>Click any command to read its full documentation.</p>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Command groups">
+            <button
+              class="tab"
+              role="tab"
+              id="tab-everyday"
+              aria-controls="panel-everyday"
+              aria-selected="true"
+            >
+              Everyday
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-branches"
+              aria-controls="panel-branches"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Branches
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-files"
+              aria-controls="panel-files"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Project files
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-setup"
+              aria-controls="panel-setup"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Setup
+            </button>
+          </div>
+
+          <div
+            class="cmd-list"
+            role="tabpanel"
+            id="panel-everyday"
+            aria-labelledby="tab-everyday"
+          >
+            <a class="cmd" href="docs.html#cmd-push"
+              ><code>rgit push [message]</code
+              ><span>Stage, commit and push everything in one step.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-pull"
+              ><code>rgit pull [branch]</code
+              ><span
+                >Get the latest changes and keep your local work safe.</span
+              ></a
+            >
+            <a class="cmd" href="docs.html#cmd-sync"
+              ><code>rgit sync</code
+              ><span>Pull remote changes, then push your commits.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-status"
+              ><code>rgit status</code
+              ><span>A clear overview of your repository.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-log"
+              ><code>rgit log</code
+              ><span>A compact, colorful commit history.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-undo"
+              ><code>rgit undo</code
+              ><span>Undo the last commit and keep its changes.</span></a
+            >
+          </div>
+          <div
+            class="cmd-list"
+            role="tabpanel"
+            id="panel-branches"
+            aria-labelledby="tab-branches"
+            hidden
+          >
+            <a class="cmd" href="docs.html#cmd-new"
+              ><code>rgit new &lt;branch&gt;</code
+              ><span>Create a new branch and switch to it.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-switch"
+              ><code>rgit switch [branch]</code
+              ><span>Switch branches, or pick one from a list.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-rename"
+              ><code>rgit rename &lt;old&gt;:&lt;new&gt;</code
+              ><span
+                >Rename a branch on your computer and on the remote.</span
+              ></a
+            >
+            <a class="cmd" href="docs.html#cmd-cleanup"
+              ><code>rgit cleanup</code
+              ><span>Delete branches that are already merged.</span></a
+            >
+          </div>
+          <div
+            class="cmd-list"
+            role="tabpanel"
+            id="panel-files"
+            aria-labelledby="tab-files"
+            hidden
+          >
+            <a class="cmd" href="docs.html#cmd-ignore"
+              ><code>rgit ignore [preset]…</code
+              ><span>Build a .gitignore from presets or a file picker.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-license"
+              ><code>rgit license [name]</code
+              ><span>Add MIT, Apache, GPL or one of 7 other licenses.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-readme"
+              ><code>rgit readme</code
+              ><span>Generate a complete README.md.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-archi"
+              ><code>rgit archi</code
+              ><span>Save the project's folder tree to a file.</span></a
+            >
+          </div>
+          <div
+            class="cmd-list"
+            role="tabpanel"
+            id="panel-setup"
+            aria-labelledby="tab-setup"
+            hidden
+          >
+            <a class="cmd" href="docs.html#cmd-clone"
+              ><code>rgit clone &lt;owner/repo&gt;</code
+              ><span>Download a repository, with a GitHub shortcut.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-login"
+              ><code>rgit login</code
+              ><span>Set the name and email used in your commits.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-whoami"
+              ><code>rgit whoami</code
+              ><span>Show who your commits are made as.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-open"
+              ><code>rgit open</code
+              ><span>Open the repository in your browser.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-doctor"
+              ><code>rgit doctor</code
+              ><span>Check that everything is set up correctly.</span></a
+            >
+            <a class="cmd" href="docs.html#cmd-help"
+              ><code>rgit help [command]</code
+              ><span>Help for any command, right in the terminal.</span></a
+            >
+          </div>
+
+          <p class="center-link">
+            <a class="btn btn-ghost" href="docs.html"
+              ><svg aria-hidden="true"><use href="#i-book" /></svg>Read the full
+              documentation</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================== Download ============================== -->
+      <section id="download">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="kicker">Download</span>
+            <h2>Install rgit in under a minute</h2>
+            <p>
+              Pick your system. rgit is free and only needs
+              <a href="https://git-scm.com">git</a> to be installed.
+            </p>
+          </div>
+
+          <div class="os-tabs" role="tablist" aria-label="Operating system">
+            <button
+              class="os-tab"
+              role="tab"
+              data-os="windows"
+              id="os-tab-windows"
+              aria-controls="os-windows"
+              aria-selected="true"
+            >
+              <svg aria-hidden="true"><use href="#i-windows" /></svg>Windows
+            </button>
+            <button
+              class="os-tab"
+              role="tab"
+              data-os="macos"
+              id="os-tab-macos"
+              aria-controls="os-macos"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <svg aria-hidden="true"><use href="#i-mac" /></svg>macOS
+            </button>
+            <button
+              class="os-tab"
+              role="tab"
+              data-os="linux"
+              id="os-tab-linux"
+              aria-controls="os-linux"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <svg aria-hidden="true"><use href="#i-linux" /></svg>Linux
+            </button>
+          </div>
+
+          <!-- Windows -->
+          <div
+            class="os-panel"
+            role="tabpanel"
+            id="os-windows"
+            aria-labelledby="os-tab-windows"
+          >
+            <ol class="os-steps">
+              <li>
+                <h3>Download the installer</h3>
+                <p>Works on Windows 10 and 11.</p>
+                <div class="dl-row">
+                  <a
+                    class="btn btn-primary"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64-setup.exe"
+                    download
+                    ><svg aria-hidden="true"><use href="#i-download" /></svg
+                    >rgit-windows-x64-setup.exe</a
+                  >
+                  <a
+                    class="btn btn-ghost"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64.exe"
+                    download
+                    >Portable .exe (no install)</a
+                  >
+                </div>
+              </li>
+              <li>
+                <h3>Run it</h3>
+                <p>
+                  Choose <strong>Install for me only</strong> (no admin rights
+                  needed) and keep <strong>Add rgit to the PATH</strong> ticked.
+                  If Windows shows “Windows protected your PC”, click
+                  <strong>More info → Run anyway</strong>.
+                </p>
+              </li>
+              <li>
+                <h3>Check it works</h3>
+                <p>
+                  Open a <strong>new</strong> Command Prompt, PowerShell or Git
+                  Bash window and run:
+                </p>
+                <div class="code">
+                  <pre><code>rgit doctor</code></pre>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- macOS -->
+          <div
+            class="os-panel"
+            role="tabpanel"
+            id="os-macos"
+            aria-labelledby="os-tab-macos"
+            hidden
+          >
+            <ol class="os-steps">
+              <li>
+                <h3>Install with one command</h3>
+                <p>
+                  Paste this into Terminal. It picks the right version for your
+                  Mac and installs it for you.
+                </p>
+                <div class="code wrap">
+                  <pre><code>curl -fsSL https://raw.githubusercontent.com/ettisafxrup/rgit/main/scripts/install.sh | sh</code></pre>
+                </div>
+                <p class="or">or download it yourself</p>
+                <div class="dl-row">
+                  <a
+                    class="btn btn-primary"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-arm64"
+                    download
+                    ><svg aria-hidden="true"><use href="#i-download" /></svg
+                    >Apple Silicon (M1 and later)</a
+                  >
+                  <a
+                    class="btn btn-ghost"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-x64"
+                    download
+                    >Intel Mac</a
+                  >
+                </div>
+              </li>
+              <li>
+                <h3>If you downloaded it yourself</h3>
+                <p>
+                  Move it into place and allow it to run (use
+                  <code>rgit-macos-x64</code> on Intel):
+                </p>
+                <div class="code wrap">
+                  <pre><code>chmod +x ~/Downloads/rgit-macos-arm64
 sudo mv ~/Downloads/rgit-macos-arm64 /usr/local/bin/rgit
-xattr -d com.apple.quarantine /usr/local/bin/rgit</code></pre></div>
-            </li>
-            <li>
-              <h3>Check it works</h3>
-              <div class="code"><pre><code>rgit doctor</code></pre></div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Linux -->
-        <div class="os-panel" role="tabpanel" id="os-linux" aria-labelledby="os-tab-linux" hidden>
-          <ol class="os-steps">
-            <li>
-              <h3>Install with one command</h3>
-              <p>Works on any distribution. It picks the right version for your computer and checks the download.</p>
-              <div class="code wrap"><pre><code>curl -fsSL https://raw.githubusercontent.com/ettisafxrup/rgit/main/scripts/install.sh | sh</code></pre></div>
-              <p class="or">or download it yourself</p>
-              <div class="dl-row">
-                <a class="btn btn-primary" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-x64" download><svg aria-hidden="true"><use href="#i-download"/></svg>x64 (Intel / AMD)</a>
-                <a class="btn btn-ghost" href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-arm64" download>ARM64</a>
-              </div>
-            </li>
-            <li>
-              <h3>If you downloaded it yourself</h3>
-              <p>Make it runnable and move it into place (use <code>rgit-linux-arm64</code> on ARM):</p>
-              <div class="code wrap"><pre><code>chmod +x ~/Downloads/rgit-linux-x64
-sudo mv ~/Downloads/rgit-linux-x64 /usr/local/bin/rgit</code></pre></div>
-            </li>
-            <li>
-              <h3>Check it works</h3>
-              <div class="code"><pre><code>rgit doctor</code></pre></div>
-            </li>
-          </ol>
-        </div>
-
-        <div class="files" data-reveal>
-          <h3>All files</h3>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>File</th><th>System</th><th>Type</th></tr></thead>
-              <tbody>
-                <tr><td><a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64-setup.exe" download>rgit-windows-x64-setup.exe</a></td><td>Windows 10 &amp; 11</td><td>Installer (recommended)</td></tr>
-                <tr><td><a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64.exe" download>rgit-windows-x64.exe</a></td><td>Windows 10 &amp; 11</td><td>Portable program</td></tr>
-                <tr><td><a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-arm64" download>rgit-macos-arm64</a></td><td>macOS, Apple Silicon</td><td>Program</td></tr>
-                <tr><td><a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-x64" download>rgit-macos-x64</a></td><td>macOS, Intel</td><td>Program</td></tr>
-                <tr><td><a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-x64" download>rgit-linux-x64</a></td><td>Linux, x64</td><td>Program</td></tr>
-                <tr><td><a href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-arm64" download>rgit-linux-arm64</a></td><td>Linux, ARM64</td><td>Program</td></tr>
-                <tr><td><a href="https://github.com/ettisafxrup/rgit/releases/latest/download/SHA256SUMS.txt" download>SHA256SUMS.txt</a></td><td>All</td><td>Checksums</td></tr>
-              </tbody>
-            </table>
+xattr -d com.apple.quarantine /usr/local/bin/rgit</code></pre>
+                </div>
+              </li>
+              <li>
+                <h3>Check it works</h3>
+                <div class="code">
+                  <pre><code>rgit doctor</code></pre>
+                </div>
+              </li>
+            </ol>
           </div>
-          <p class="files-foot"><a href="https://github.com/ettisafxrup/rgit/releases">All releases</a> · <a href="docs.html#installation">Installation guide</a> · Go developers: <code>go install github.com/ettisafxrup/rgit/cmd/rgit@latest</code></p>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============================== FAQ ============================== -->
-    <section class="alt" id="faq">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="kicker">FAQ</span>
-          <h2>Frequently asked questions</h2>
-        </div>
-        <div class="faq" data-stagger>
-          <details data-reveal>
-            <summary>Does rgit replace git?</summary>
-            <p>No. rgit is a companion that runs the git already installed on your computer. You can keep using plain git side by side, and everything rgit does shows up in your normal git history.</p>
-          </details>
-          <details data-reveal>
-            <summary>Will my logins, SSH keys and settings still work?</summary>
-            <p>Yes. rgit calls git directly, so credential helpers, SSH keys, hooks, aliases and every setting work exactly as before.</p>
-          </details>
-          <details data-reveal>
-            <summary>Is it safe to use on important repositories?</summary>
-            <p>Yes. Pulls keep your uncommitted work safe, rgit asks before staging or deleting anything, <code>undo</code> keeps your changes, and a remote branch is only deleted after its new name has been pushed.</p>
-          </details>
-          <details data-reveal>
-            <summary>Windows says “Windows protected your PC”. Is that normal?</summary>
-            <p>Yes, it appears for new apps that are not yet widely downloaded. Click <strong>More info</strong>, then <strong>Run anyway</strong>. You can check your download against <code>SHA256SUMS.txt</code> from the release.</p>
-          </details>
-          <details data-reveal>
-            <summary>macOS says the app “cannot be opened”. What should I do?</summary>
-            <p>Run <code>xattr -d com.apple.quarantine /usr/local/bin/rgit</code> once. The one-line install command does this for you automatically.</p>
-          </details>
-          <details data-reveal>
-            <summary>Do I need administrator rights?</summary>
-            <p>No. On Windows, choose “Install for me only”, or use the portable program. On Linux and macOS, the install command uses <code>~/.local/bin</code> when it can't write to <code>/usr/local/bin</code>.</p>
-          </details>
-          <details data-reveal>
-            <summary>How do I uninstall rgit?</summary>
-            <p>On Windows, go to Settings → Apps → rgit. On Linux and macOS, delete the file, for example <code>sudo rm /usr/local/bin/rgit</code>.</p>
-          </details>
-        </div>
-      </div>
-    </section>
+          <!-- Linux -->
+          <div
+            class="os-panel"
+            role="tabpanel"
+            id="os-linux"
+            aria-labelledby="os-tab-linux"
+            hidden
+          >
+            <ol class="os-steps">
+              <li>
+                <h3>Install with one command</h3>
+                <p>
+                  Works on any distribution. It picks the right version for your
+                  computer and checks the download.
+                </p>
+                <div class="code wrap">
+                  <pre><code>curl -fsSL https://raw.githubusercontent.com/ettisafxrup/rgit/main/scripts/install.sh | sh</code></pre>
+                </div>
+                <p class="or">or download it yourself</p>
+                <div class="dl-row">
+                  <a
+                    class="btn btn-primary"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-x64"
+                    download
+                    ><svg aria-hidden="true"><use href="#i-download" /></svg>x64
+                    (Intel / AMD)</a
+                  >
+                  <a
+                    class="btn btn-ghost"
+                    href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-arm64"
+                    download
+                    >ARM64</a
+                  >
+                </div>
+              </li>
+              <li>
+                <h3>If you downloaded it yourself</h3>
+                <p>
+                  Make it runnable and move it into place (use
+                  <code>rgit-linux-arm64</code> on ARM):
+                </p>
+                <div class="code wrap">
+                  <pre><code>chmod +x ~/Downloads/rgit-linux-x64
+sudo mv ~/Downloads/rgit-linux-x64 /usr/local/bin/rgit</code></pre>
+                </div>
+              </li>
+              <li>
+                <h3>Check it works</h3>
+                <div class="code">
+                  <pre><code>rgit doctor</code></pre>
+                </div>
+              </li>
+            </ol>
+          </div>
 
-    <!-- ============================== CTA ============================== -->
-    <section aria-labelledby="cta-title">
-      <div class="container">
-        <div class="cta-box" data-reveal>
-          <img src="logo.svg" alt="" width="64" height="64" loading="lazy" decoding="async">
-          <h2 id="cta-title">Make git feel effortless</h2>
-          <p>Download rgit for free and spend your time building, not typing git commands.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#download"><svg aria-hidden="true"><use href="#i-download"/></svg>Download rgit</a>
-            <a class="btn btn-ghost" href="docs.html"><svg aria-hidden="true"><use href="#i-book"/></svg>Documentation</a>
+          <div class="files" data-reveal>
+            <h3>All files</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>File</th>
+                    <th>System</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64-setup.exe"
+                        download
+                        >rgit-windows-x64-setup.exe</a
+                      >
+                    </td>
+                    <td>Windows 10 &amp; 11</td>
+                    <td>Installer (recommended)</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-windows-x64.exe"
+                        download
+                        >rgit-windows-x64.exe</a
+                      >
+                    </td>
+                    <td>Windows 10 &amp; 11</td>
+                    <td>Portable program</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-arm64"
+                        download
+                        >rgit-macos-arm64</a
+                      >
+                    </td>
+                    <td>macOS, Apple Silicon</td>
+                    <td>Program</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-macos-x64"
+                        download
+                        >rgit-macos-x64</a
+                      >
+                    </td>
+                    <td>macOS, Intel</td>
+                    <td>Program</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-x64"
+                        download
+                        >rgit-linux-x64</a
+                      >
+                    </td>
+                    <td>Linux, x64</td>
+                    <td>Program</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/ettisafxrup/rgit/releases/latest/download/rgit-linux-arm64"
+                        download
+                        >rgit-linux-arm64</a
+                      >
+                    </td>
+                    <td>Linux, ARM64</td>
+                    <td>Program</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://github.com/ettisafxrup/rgit/releases/latest/download/SHA256SUMS.txt"
+                        download
+                        >SHA256SUMS.txt</a
+                      >
+                    </td>
+                    <td>All</td>
+                    <td>Checksums</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="files-foot">
+              <a href="https://github.com/ettisafxrup/rgit/releases"
+                >All releases</a
+              >
+              · <a href="docs.html#installation">Installation guide</a> · Go
+              developers:
+              <code
+                >go install github.com/ettisafxrup/rgit/cmd/rgit@latest</code
+              >
+            </p>
           </div>
         </div>
+      </section>
+
+      <!-- ============================== FAQ ============================== -->
+      <section class="alt" id="faq">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="kicker">FAQ</span>
+            <h2>Frequently asked questions</h2>
+          </div>
+          <div class="faq" data-stagger>
+            <details data-reveal>
+              <summary>Does rgit replace git?</summary>
+              <p>
+                No. rgit is a companion that runs the git already installed on
+                your computer. You can keep using plain git side by side, and
+                everything rgit does shows up in your normal git history.
+              </p>
+            </details>
+            <details data-reveal>
+              <summary>
+                Will my logins, SSH keys and settings still work?
+              </summary>
+              <p>
+                Yes. rgit calls git directly, so credential helpers, SSH keys,
+                hooks, aliases and every setting work exactly as before.
+              </p>
+            </details>
+            <details data-reveal>
+              <summary>Is it safe to use on important repositories?</summary>
+              <p>
+                Yes. Pulls keep your uncommitted work safe, rgit asks before
+                staging or deleting anything, <code>undo</code> keeps your
+                changes, and a remote branch is only deleted after its new name
+                has been pushed.
+              </p>
+            </details>
+            <details data-reveal>
+              <summary>
+                Windows says “Windows protected your PC”. Is that normal?
+              </summary>
+              <p>
+                Yes, it appears for new apps that are not yet widely downloaded.
+                Click <strong>More info</strong>, then
+                <strong>Run anyway</strong>. You can check your download against
+                <code>SHA256SUMS.txt</code> from the release.
+              </p>
+            </details>
+            <details data-reveal>
+              <summary>
+                macOS says the app “cannot be opened”. What should I do?
+              </summary>
+              <p>
+                Run
+                <code>xattr -d com.apple.quarantine /usr/local/bin/rgit</code>
+                once. The one-line install command does this for you
+                automatically.
+              </p>
+            </details>
+            <details data-reveal>
+              <summary>Do I need administrator rights?</summary>
+              <p>
+                No. On Windows, choose “Install for me only”, or use the
+                portable program. On Linux and macOS, the install command uses
+                <code>~/.local/bin</code> when it can't write to
+                <code>/usr/local/bin</code>.
+              </p>
+            </details>
+            <details data-reveal>
+              <summary>How do I uninstall rgit?</summary>
+              <p>
+                On Windows, go to Settings → Apps → rgit. On Linux and macOS,
+                delete the file, for example
+                <code>sudo rm /usr/local/bin/rgit</code>.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== CTA ============================== -->
+      <section aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta-box" data-reveal>
+            <img
+              src="logo.svg"
+              alt=""
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
+            />
+            <h2 id="cta-title">Make git feel effortless</h2>
+            <p>
+              Download rgit for free and spend your time building, not typing
+              git commands.
+            </p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#download"
+                ><svg aria-hidden="true"><use href="#i-download" /></svg
+                >Download rgit</a
+              >
+              <a class="btn btn-ghost" href="docs.html"
+                ><svg aria-hidden="true"><use href="#i-book" /></svg
+                >Documentation</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <a class="brand" href="#top"
+          ><img
+            src="logo.svg"
+            alt=""
+            width="28"
+            height="28"
+            loading="lazy"
+            decoding="async"
+          />rgit</a
+        >
+        <nav class="footer-links" aria-label="Footer">
+          <a href="docs.html">Documentation</a>
+          <a href="https://github.com/ettisafxrup/rgit">Source code</a>
+          <a href="https://github.com/ettisafxrup/rgit/releases">Releases</a>
+          <a href="https://github.com/ettisafxrup/rgit/issues/new"
+            >Report an issue</a
+          >
+          <a href="https://github.com/ettisafxrup/rgit/blob/main/LICENSE"
+            >MIT License</a
+          >
+        </nav>
+        <span
+          >© <span data-year>2026</span> Ettisaf Rup · Made in Bangladesh</span
+        >
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer>
-    <div class="container footer-inner">
-      <a class="brand" href="#top"><img src="logo.svg" alt="" width="28" height="28" loading="lazy" decoding="async">rgit</a>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="docs.html">Documentation</a>
-        <a href="https://github.com/ettisafxrup/rgit">Source code</a>
-        <a href="https://github.com/ettisafxrup/rgit/releases">Releases</a>
-        <a href="https://github.com/ettisafxrup/rgit/issues/new">Report an issue</a>
-        <a href="https://github.com/ettisafxrup/rgit/blob/main/LICENSE">MIT License</a>
-      </nav>
-      <span>© <span data-year>2026</span> Ettisaf Rup · Made in Bangladesh</span>
-    </div>
-  </footer>
-
-  <button class="to-top" type="button" aria-label="Back to top"><svg aria-hidden="true"><use href="#i-up"/></svg></button>
-</body>
+    <button class="to-top" type="button" aria-label="Back to top">
+      <svg aria-hidden="true"><use href="#i-up" /></svg>
+    </button>
+  </body>
 </html>

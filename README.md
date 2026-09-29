@@ -5,7 +5,7 @@
 <h1 align="center">rgit</h1>
 
 <p align="center">
-  <b>git, without the ceremony.</b><br>
+  <b>rgit is a lightweight command-line macro tool designed to speed up and simplify your daily life workflows, including gits and project managings.</b><br>
   Your everyday git work, in one simple command.
 </p>
 
