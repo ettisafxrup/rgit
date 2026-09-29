@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="rgit logo">
+  <rect width="256" height="256" rx="60" fill="#153040"/>
+  <g fill="none" stroke="#FFC619" stroke-width="22" stroke-linecap="round">
+    <path d="M88 80 V180"/>
+    <path d="M88 144 A64 64 0 0 1 152 80 H170"/>
+  </g>
+  <g fill="#FFC619">
+    <circle cx="88" cy="180" r="25"/>
+    <circle cx="170" cy="80" r="25"/>
+  </g>
+  <g fill="#153040">
+    <circle cx="88" cy="180" r="11"/>
+    <circle cx="170" cy="80" r="11"/>
+  </g>
+</svg>

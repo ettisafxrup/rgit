@@ -1,0 +1,18 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/bin/
+/dist/
+
+# Test and profiling output
+*.test
+*.out
+coverage.*
+*.coverprofile
+
+# Workspace files
+go.work
+go.work.sum

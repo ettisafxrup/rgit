@@ -1,0 +1,15 @@
+# Compiled classes and packages
+*.class
+*.jar
+*.war
+*.ear
+
+# Build tools
+target/
+build/
+.gradle/
+out/
+
+# Logs and crash dumps
+*.log
+hs_err_pid*

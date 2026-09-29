@@ -1,0 +1,66 @@
+# {{.Title}}
+
+{{.Description}}
+
+---
+
+## Features
+
+- Feature one
+- Feature two
+- Feature three
+
+## Getting Started
+{{- if .RepoURL}}
+
+Clone the repository:
+
+```bash
+git clone {{.RepoURL}}.git
+cd {{.RepoName}}
+```
+{{- end}}
+{{- if .RunCommand}}
+
+Run the project:
+
+```bash
+{{.RunCommand}}
+```
+{{- end}}
+
+## Project Structure
+
+```text
+{{.Structure}}```
+
+## Contributing
+
+Contributions are welcome — bug fixes, new features and documentation improvements alike.
+
+1. Fork the repository.
+2. Create a branch: `git checkout -b feature/your-feature-name`
+3. Commit your changes: `git commit -m "Add your feature"`
+4. Push the branch: `git push origin feature/your-feature-name`
+5. Open a pull request.
+
+Please keep pull requests focused: one change per pull request is easiest to review.
+{{- if .RepoURL}}
+
+## Issues
+
+Found a bug or have an idea? [Open an issue]({{.RepoURL}}/issues/new).
+{{- end}}
+
+## License
+{{if .License}}
+This project is licensed under the **{{.License}}**. See the [LICENSE](./LICENSE) file for details.
+{{- else}}
+No license has been chosen yet. Run `rgit license` to add one.
+{{- end}}
+{{- if .Owner}}
+
+---
+
+Made by [@{{.Owner}}](https://github.com/{{.Owner}})
+{{- end}}

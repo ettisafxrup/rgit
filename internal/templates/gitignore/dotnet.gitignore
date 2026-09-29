@@ -1,0 +1,18 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+.vs/
+
+# Packages
+*.nupkg
+packages/
+
+# Test results
+TestResults/

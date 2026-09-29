@@ -1,0 +1,8 @@
+# Build output
+/target/
+
+# Backup files from rustfmt
+**/*.rs.bk
+
+# Debug symbols on Windows
+*.pdb

@@ -1,0 +1,15 @@
+# Build output
+/dist/
+*.exe
+!/shell-rgit/installer/rgit.exe
+
+# Test and coverage output
+*.test
+*.out
+coverage.*
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

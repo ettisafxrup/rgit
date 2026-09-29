@@ -1,0 +1,39 @@
+// Windows resources for rgit.exe: the icon and the version information
+// shown in Explorer's "Details" tab. Compiled by scripts/build.ps1 into
+// cmd/rgit/rsrc_windows_amd64.syso, which the Go linker picks up by itself.
+//
+// RGIT_VERSION (2.0.0) and RGIT_VERSION_NUM (2,0,0,0) are passed with -D.
+
+#include <winver.h>
+
+#define STRINGIFY2(x) #x
+#define STRINGIFY(x) STRINGIFY2(x)
+#define VERSION_TEXT STRINGIFY(RGIT_VERSION)
+
+1 ICON "../../assets/rgit.ico"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     RGIT_VERSION_NUM
+PRODUCTVERSION  RGIT_VERSION_NUM
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "CompanyName",      "Ettisaf Rup"
+      VALUE "FileDescription",  "rgit - git, without the ceremony"
+      VALUE "FileVersion",      VERSION_TEXT
+      VALUE "InternalName",     "rgit"
+      VALUE "LegalCopyright",   "GNU General Public License v3.0"
+      VALUE "OriginalFilename", "rgit.exe"
+      VALUE "ProductName",      "rgit"
+      VALUE "ProductVersion",   VERSION_TEXT
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END
